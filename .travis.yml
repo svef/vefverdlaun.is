@@ -1,0 +1,44 @@
+language: node_js
+node_js:
+  - '6'
+
+before_install:
+  - time npm i -g yarn --cache-min 999999999
+
+cache:
+  directories:
+    - node_modules
+    - $HOME/.yarn-cache
+    - $HOME/.npm
+
+install:
+  - time yarn
+
+script:
+  - time yarn run build
+
+deploy:
+- provider: gcs
+  access_key_id: GOOGZMKOTXLFVL5ERT2T
+  secret_access_key:
+    secure: HxpfOja3T2B2rWkCPmpES7D5qTpaXXSIy38KEFnG+GH1EVg/NWD7Cz4L6p8NgxI4uQWuzjLKaKWy/6diHSM4CIgPSHZ3x/FBQ4f4l0a9vKHKKr/tDbdhaaJkfEi0Rp9PFMT6sZZIb+f+Z6TOUpEUmLsNaElPerk4NAogKPOvAk6zaWGQnqJ5yl6sbWed2JYfyfldJYxnfv6SMroCAO5maht/YqR5gPz+MrupZTfDQYnZluPP8yuysHizd4ERdp7TKDDM+zypBsR81BBnV/LHtmQRlhbHrJecewDxY+5BqwO7KRv8PEF/VlO/9qA7Lkb9z0fd4C4VbOmFs8nRu26Vk4QyQCKzFIO/YHT4Aosi7b88LLhCscPjtKEaogwD2kE8vD7LbsCoVWARfHSBF5U3OvvOVB5ZW8crVDppjbJClhP3BdfvXuiMeD9wma6wvjczUdWned+J0OqMkpv53m/00sfUa/69bc5FLiIYqL1pklcA3jAKLWWiedQea9i2SI+ELkD/tpMHgW8SoLmFgSikzBq6ifjfB+bWFtNeSD7ZsC1LSREQtfdnL1QTEVE0hlFjvTgzT4gT2N97d6JMXpM2wVjOkAZFr5Am3JNr/qXrJPNOwtzyaZdppEqXCAo36LK55IWB/CapEssEl809MbAZHZHYg0DodoJvI4eLAK36VK0=
+  bucket: www.vefverdlaun.is
+  skip_cleanup: true
+  local-dir: dist
+  acl: public-read
+  cache_control: "no-cache"
+  on:
+    branch: master
+    repo: svef/vefverdlaun.is
+- provider: gcs
+  access_key_id: GOOGZMKOTXLFVL5ERT2T
+  secret_access_key:
+    secure: HxpfOja3T2B2rWkCPmpES7D5qTpaXXSIy38KEFnG+GH1EVg/NWD7Cz4L6p8NgxI4uQWuzjLKaKWy/6diHSM4CIgPSHZ3x/FBQ4f4l0a9vKHKKr/tDbdhaaJkfEi0Rp9PFMT6sZZIb+f+Z6TOUpEUmLsNaElPerk4NAogKPOvAk6zaWGQnqJ5yl6sbWed2JYfyfldJYxnfv6SMroCAO5maht/YqR5gPz+MrupZTfDQYnZluPP8yuysHizd4ERdp7TKDDM+zypBsR81BBnV/LHtmQRlhbHrJecewDxY+5BqwO7KRv8PEF/VlO/9qA7Lkb9z0fd4C4VbOmFs8nRu26Vk4QyQCKzFIO/YHT4Aosi7b88LLhCscPjtKEaogwD2kE8vD7LbsCoVWARfHSBF5U3OvvOVB5ZW8crVDppjbJClhP3BdfvXuiMeD9wma6wvjczUdWned+J0OqMkpv53m/00sfUa/69bc5FLiIYqL1pklcA3jAKLWWiedQea9i2SI+ELkD/tpMHgW8SoLmFgSikzBq6ifjfB+bWFtNeSD7ZsC1LSREQtfdnL1QTEVE0hlFjvTgzT4gT2N97d6JMXpM2wVjOkAZFr5Am3JNr/qXrJPNOwtzyaZdppEqXCAo36LK55IWB/CapEssEl809MbAZHZHYg0DodoJvI4eLAK36VK0=
+  bucket: dev.vefverdlaun.is
+  skip_cleanup: true
+  local-dir: dist
+  acl: public-read
+  cache_control: "no-cache"
+  on:
+    branch: develop
+    repo: svef/vefverdlaun.is
