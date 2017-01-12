@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700');
+
+
+html, body {
+  font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial;
+  font-size: 20px;
+  color: $color-font;
+}
+
+.pagetitle {
+  position: relative;
+  margin: 0 0 $spacing*8;
+
+  // background-color: $color-gray-lightbg;
+
+  transform: translate3d(0,0,0);
+  transition: transform 1000ms $easeout 1250ms;
+
+  html[svef-last] & {
+    transition-delay: 0ms;
+  }
+
+  html[svef-navigating="true"] &,
+  .routing &,
+  .loading & {
+    transform: translate3d(-20px,0,0);
+    transition: transform 1000ms $easeout;
+  }
+
+  h1 {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+h1, h2 {
+  position: relative;
+  margin: 0;
+  padding: 75px 20% 100px 0;
+
+  font-weight: 700;
+  line-height: 1em;
+  word-break: break-all;
+
+  span {
+    display: block;
+    margin: 0 auto;
+    // max-width: $page-max-width;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 2px;
+
+    background-color: #222;
+
+    transform: translate3d(0, 0, 0);
+    transition: transform 1000ms $easeout 1250ms;
+  }
+  [svef-last] &:after {
+    transition: transform 1000ms $easeout;
+  }
+  .routing &:after {
+    transform: translate3d(0, 0, 0);
+  }
+  .loading &:after {
+    transform: translate3d(-100vw, 0, 0);
+  }
+  .routing &:after,
+  .loading &:after {
+    transition: transform 1000ms $easeout;
+  }
+
+  svg {
+    width: auto;
+    height: (2/3 + 0em);
+
+    position: absolute;
+    top: calc(100% - 8px);
+    right: 10vw;
+
+    transform: translate3d(0, -50%, 0);
+
+    @include respond-to(xxlarge) {
+      right: 120px;
+    }
+
+    .hexagon {
+      stroke: $color-primary;
+      stroke-width: 2px;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 0;
+
+      transition: stroke-dashoffset 1500ms $easeout 1250ms;
+
+      [svef-last] & {
+        transition: stroke-dashoffset 1500ms $easeout 250ms;
+      }
+
+      .routing &,
+      .loading & {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        transition: stroke-dashoffset 1500ms $easeout;
+      }
+    }
+  }
+}
+
+h1 {
+  font-size: 100px;
+  min-height: 200px;
+  @include respond-to(medium) {
+    font-size: 200px;
+    min-height: 400px;
+  }
+  @include respond-to(large) {
+    font-size: 300px;
+
+    min-height: 775px;
+  }
+
+  &:after {
+    transform: translate3d(10vw, 0, 0);
+  }
+}
+
+h2 {
+  font-size: 50px;
+  @include respond-to(medium) {
+    font-size: 60px;
+  }
+  @include respond-to(large) {
+    font-size: 80px;
+  }
+
+  &:after {
+    transform: translate3d(30px, 0, 0);
+  }
+}
+
+h3, h4, h5, h6 {
+  margin: 0 auto $spacing;
+  padding: 0;
+
+  font-weight: 700;
+  line-height: 1.25em;
+
+  color: $color-gray;
+}
+
+h3 {
+  font-size: 24px;
+  @include respond-to(medium) {
+    font-size: 30px;
+  }
+  @include respond-to(large) {
+    font-size: 36px;
+  }
+}
+
+h4 {
+  font-size: 20px;
+  @include respond-to(medium) {
+    font-size: 22px;
+  }
+  @include respond-to(large) {
+    font-size: 24px;
+  }
+}
+
+h5 {
+  font-size: 20px;
+  letter-spacing: 0;
+}
+
+h6 {
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+hgroup {
+  @include clearfix;
+  margin-bottom: $spacing;
+
+  h1, h2, h3, h4, h5, h6 {
+    + h1, + h2, + h3, + h4, + h5, + h6 {
+      margin-bottom: -$spacing / 2;
+    }
+  }
+
+  :last-child { margin-bottom: 0; }
+}
+
+p {
+  margin: 0 auto $spacing;
+  font-size: $font-size;
+  font-weight: 400;
+  line-height: 1.875;
+
+  color: $color-font;
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+a {
+  color: inherit;
+}
+
+.text-small { font-size: $font-size-small; }
+.text-large { font-size: $font-size-large; }
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+@each $name, $color in $colorArray {
+  .color-#{$name} {
+    color: $color;
+    border-color: $color;
+  }
+
+  li.color-#{$name}:before {
+    color: $color;
+  }
+
+  h1, h2 {
+    &.color-#{$name}:after {
+      background-color: $color;
+    }
+    &.color-#{$name} svg .hexagon {
+      stroke: $color;
+    }
+  }
+}
+

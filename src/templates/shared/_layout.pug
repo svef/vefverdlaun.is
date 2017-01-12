@@ -1,0 +1,20 @@
+include _mixins
+doctype html
+
+html.loading(svef-site='conf')
+  include _head
+
+  body
+    main
+      block header
+        include _header
+
+      .inner
+        block content
+      .hidden-inner
+
+    block footer
+      include _footer
+
+    block javascript
+      script(src='/scripts/main.js')

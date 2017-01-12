@@ -1,0 +1,122 @@
+
+section {
+
+  &.white {
+    background-color: white;
+  }
+
+  &.cta {
+    padding: 100px 0 50px;
+  }
+
+  &.splitsection {
+    margin: 0 auto $spacing*3;
+    padding: $spacing*2 $spacing $spacing;
+  }
+
+  p, li, blockquote {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.35;
+
+    color: $color-gray;
+  }
+}
+
+section.gray {
+  position: relative;
+
+  > grid {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:after {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+
+    content: '';
+
+    background-color: $color-gray-lightbg;
+
+    transition: transform 400ms ease 1250ms;
+    transform: rotateY(0deg);
+
+    html[svef-last] & {
+      transition-delay: 0ms;
+    }
+
+    .routing &,
+    .loading & {
+      transform: rotateY(90deg);
+    }
+  }
+}
+
+section.fphero {
+  overflow: hidden;
+
+  @include respond-to(large) {
+    min-height: 800px;
+  }
+
+  h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+    opacity: 0.4;
+
+    padding: 0 10% 0 0;
+
+    color: #EBEBEA;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .title {
+    position: relative;
+    z-index: 1;
+
+    margin: 0 auto $spacing;
+    padding: 100px 0 0;
+
+    color: $color-primary;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 1.35;
+    text-align: center;
+
+    @include respond-to(medium) {
+      padding-top: 150px;
+      font-size: 100px;
+    }
+
+    @include respond-to(large) {
+      padding-top: 200px;
+      font-size: 120px;
+    }
+  }
+
+  p {
+    position: relative;
+    z-index: 1;
+
+    margin: 0 auto 1.5em;
+    padding: 0;
+
+    font-size: 20px;
+    line-height: 1.35;
+    text-align: center;
+    max-width: 980px;
+    color: $color-gray-dark;
+
+    @include respond-to(medium) {
+      font-size: 28px;
+    }
+  }
+}

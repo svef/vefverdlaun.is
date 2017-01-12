@@ -1,0 +1,67 @@
+
+.button {
+  vertical-align: middle;
+  display: inline-block;
+
+  margin: 0 auto;
+  padding: 0 $spacing;
+  height: 54px;
+  line-height: 50px;
+
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+  white-space: nowrap;
+
+  background: $color-primary;
+
+  border-radius: 49px;
+
+  opacity: 1;
+
+  transition: opacity 150ms, border 150ms, background 150ms;
+
+  &.big {
+    padding: 0 $spacing/2;
+  }
+
+  @include respond-to(small) {
+    padding: 0 $spacing*2;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.outline {
+    background: white;
+    border: 1px solid #E0E0E0;
+
+    // font-weight: 400;
+    color: $color-gray-dark;
+
+    &:hover {
+      opacity: 1;
+      border-color: $color-gray-dark;
+    }
+  }
+
+  @each $name, $color, $text-color in $colorArray {
+    &.color-#{$name} {
+      background-color: $color;
+      color: $text-color;
+
+      &.outline {
+        background-color: white;
+        border-color: $color;
+        color: $color;
+
+        &:hover {
+          background-color: $color;
+          color: $text-color;
+        }
+      }
+    }
+  }
+}

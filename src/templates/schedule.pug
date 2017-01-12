@@ -1,0 +1,111 @@
+extends /templates/shared/_layout
+
+block content
+  +pagetitle('Schedule', 'blue')
+
+  section.splitsection
+    grid
+      column.text-center
+        p The conference will be held at Harpa on the 27th of January
+
+  grid.no-gutter
+    column.large-up-offset-2.large-9.xxlarge-6
+      +schedule('Schedule for the day')
+        +scheduleItem('08:30', 'Badge pickup, coffee & networking')
+
+        +scheduleSpeakerItem(
+          '09:00',
+          {
+            name: 'Markús M. Þorgeirsson',
+          },
+          {
+            title: 'SVEF Chairman opens the conference',
+          }
+        )
+
+        +scheduleSpeakerItem(
+          '09:15',
+          {
+            name: 'Harry Roberts',
+            website: 'http://csswizardry.com',
+            twitter: 'csswizardry',
+          },
+          {
+            title: 'Refactoring CSS Without Losing Your Mind',
+            description: 'Working with CSS is tricky enough as it is; working with legacy CSS can be nightmarish. In this talk, we’ll look at how we decide what to refactor and when; how we can refactor code whilst still shipping features; how to avoid regressions when adding new CSS; how we can avoid the dreaded refactoring tunnels; running new and legacy code in tandem; and a bunch of other neat little tips and tricks.',
+          }
+        )
+
+        +scheduleSpeakerItem(
+          '10:15',
+          {
+            name: 'Birkir Gunnarsson',
+            website: 'http://bbt.com',
+            twitter: 'birkir_gun',
+          },
+          {
+            title: 'Accessibility - the ultimate UX',
+            description: 'Accessibility is not just about complying with legislative requirements in the USA, canada and the EU.<br>It\'s not just about reaching out to another 20% of the population.<br>It\'s not just about ensuring better compatibility on more screen sizes and more devices.<br>Accessibility is smart UI design, backed by solid code, that enables all users to understan and interact with your website.<br>Come find out why accessibility is the ultimate UX.',
+          }
+        )
+
+        +scheduleItem('10:45', 'Coffee', '')
+
+        +scheduleSpeakerItem(
+          '11:00',
+          {
+            name: 'Vitaly Friedman',
+            website: 'http://smashingmagazine.com',
+            twitter: 'smashingmag',
+          },
+          {
+            title: 'Dirty Little Tricks From The Dark Corners of Front-End',
+            description: 'Do you love the &lt;object&gt; tag, too? How do you feel about perfectly responsive typographic scale and vertical rhythm? Do you feel itchy when it comes to building responsive email layouts? Have you ever tried to work around complex tables, nasty carousels, endless country selectors and complex user interfaces? Well, let’s bring it on!<br><br>In this talk, Vitaly Friedman, editor-in-chief of Smashing Magazine, will present dirty practical techniques and clever ideas developed in actual real-life projects, and use many examples to illustrate how we can solve problems smarter and faster. Please take the techniques with a grain of salt. Beware: you will not be able to unlearn what you’ll learn in the session!',
+          }
+        )
+
+        +scheduleItem('12:00', 'Lunch break')
+
+        +scheduleSpeakerItem(
+          '13:00',
+          {
+            name: 'Donna Lichaw',
+            website: 'http://donnalichaw.com',
+            twitter: 'dlichaw',
+          },
+          {
+            title: 'Story First: Crafting Products That Engage ',
+            description: 'While many of us seek out the newest and shiniest tools, methods, and processes to build more successful products and services, we often overlook one of the oldest, leanest, most effective tools out there: the structurally sound story. Whether you realize it or not in the moment, you experience everything as if it was a story. The better the story, the more likely you are to want to use a product, continue to use it, pay to use it, and recommend it to others. In this talk, you will see how taking a story first approach to product design and development will help you build more successful websites, apps, campaigns, and services that excite your customers, draw them in, incite them to action, and keep them engaged over time.',
+          }
+        )
+
+        +scheduleSpeakerItem(
+          '14:30',
+          {
+            name: 'Steinar Ingi Farestveit',
+            website: 'http://steifar.com',
+            twitter: 'steifar',
+          },
+          {
+            title: 'Prototyping = Better product',
+            description: '',
+          }
+        )
+
+        +scheduleItem('15:00', 'Coffee')
+
+        +scheduleSpeakerItem(
+          '15:15',
+          {
+            name: 'Paul Boag',
+            website: 'http://boagworld.com',
+            twitter: 'boagworld',
+          },
+          {
+            title: 'User Experience Revolution',
+            description: 'Do you feel like the only person at your company who understands what a huge competitive advantage a good user experience provides? Are you frustrated that your management team doesn’t see the value of creating great user experiences? Do you struggle to convince colleagues to approach projects from a users perspective?Many companies try to create a great experience for customers. But few are willing to make the changes required to deliver on that promise. In fact most don’t even realise just how bad their experience can be. This talk shows you how to bring about change in your organisation. You don’t need to have power, position or influence to make a difference. It won’t be easy or quick, but you can start a revolution in your place of work. A revolution that will help to reshape the company into one capable of offering outstanding service. All you need is some determination and a willingness to challenge the status quo.',
+          }
+        )
+
+        +scheduleItem('16:15', 'Networking & drinks')
+        +scheduleItem('17:00', 'Conference ends')

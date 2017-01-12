@@ -1,0 +1,91 @@
+.schedule {
+
+  &__heading {
+    padding: 0 $spacing $spacing;
+  }
+
+  &__item {
+    padding: $spacing $spacing 0;
+    display: flex;
+
+    flex-direction: column;
+
+    &:nth-child(2n+2) {
+      background: $color-gray-lightbg;
+    }
+
+    @include respond-to(medium) {
+      flex-direction: row;
+
+      &:nth-child(2n+2) {
+        background: none;
+      }
+    }
+  }
+
+  &__content {
+    padding-bottom: $spacing;
+  }
+
+  &__time {
+    padding-right: $spacing;
+    padding-bottom: $spacing;
+
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 400;
+
+    &.bold {
+      font-weight: 700;
+    }
+  }
+
+  &__title {
+    padding-bottom: $spacing / 2;
+
+    font-size: 28px;
+    line-height: 1;
+    font-weight: normal;
+    color: $color-gray;
+
+    &.italic {
+      font-style: italic;
+    }
+  }
+
+  &__speaker,
+  &__details {
+    font-size: 26px;
+    line-height: 1;
+    font-weight: normal;
+    font-style: italic;
+    color: $color-gray-light;
+  }
+
+  &__title,
+  &__speaker,
+  &__details {
+
+    span {
+      display: block;
+    }
+
+    small {
+      vertical-align: 3px;
+      display: inline-block;
+      font-size: 60%;
+      font-style: italic;
+      color: $color-gray-light;
+
+      + small {
+        margin-left: $spacing;
+      }
+    }
+  }
+
+  &__description {
+    font-size: $font-size;
+    line-height: 1.35em;
+    color: $color-gray-light;
+  }
+}

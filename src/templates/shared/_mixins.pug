@@ -1,0 +1,55 @@
+
+mixin pagetitle(text, color = 'primary')
+  section.gray.pagetitle: grid.no-gutter: column
+    h1(class=`color-${color}`)
+      span=text
+      include /images/hexagon.svg
+
+mixin item(title, subtitle = '', image = '', color = 'primary', num = '')
+  .item(class=`color-${color}`)
+    grid
+      column.large-3
+        if image
+          .item__image
+            img(src=image, alt='')
+      column.large-up-offset-1.large-6
+        h2.item__title= title
+        if subtitle
+          p.item__subtitle= subtitle
+        .item__content
+          if block
+            block
+
+mixin schedule(heading)
+  .schedule
+    h3.schedule__heading= heading
+    block
+
+mixin scheduleItem(time, title, details = '')
+  .schedule__item
+    .schedule__time= time
+    .schedule__content
+      h4.schedule__title.italic= title
+      if details
+        h5.schedule__details= details
+
+mixin scheduleSpeakerItem(time, speaker = {}, talk = {})
+  .schedule__item
+    .schedule__time.bold= time
+    .schedule__content
+      if talk.title
+        h4.schedule__title= talk.title
+        h5.schedule__speaker
+          +scheduleSpeakerItemSpeaker(speaker)
+      else
+        h4.schedule__title
+          +scheduleSpeakerItemSpeaker(speaker)
+      if talk.description
+        p.schedule__description!= talk.description
+
+mixin scheduleSpeakerItemSpeaker(speaker)
+  span=speaker.name
+  if speaker.website
+    small: a(href=speaker.website target='_blank')=speaker.website.split('://').pop()
+  if speaker.twitter
+    small: a(href=`https://twitter.com/${speaker.twitter}` target='_blank')=`@${speaker.twitter}`

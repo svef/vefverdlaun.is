@@ -1,0 +1,64 @@
+
+footer {
+  overflow: hidden;
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+
+  margin: auto;
+  padding: $spacing/2 0;
+  width: 100%;
+  min-width: $page-min-width;
+  height: $footer-height;
+
+  text-align: center;
+
+  transition: transform 500ms ease 750ms;
+  transform: translate3d(0,0,0);
+
+  background: white;
+
+  opacity: 1;
+  transition: opacity 500ms ease 1s;
+
+  .loading & {
+    opacity: 0;
+    transition: opacity 250ms;
+  }
+
+  p {
+    padding-top: $spacing;
+    font-size: 18px;
+    color: $color-gray-lighter;
+
+    text-align: center;
+
+    @include respond-to(large) {
+      text-align: left;
+    }
+  }
+
+  > grid {
+    position: relative;
+    z-index: 1;
+  }
+
+  > svg {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 0;
+
+    margin: auto;
+    width: 350px;
+
+    transform: translate3d(0, -140px, 0);
+
+    .hexagon {
+      fill: $color-gray-lightbg;
+    }
+  }
+}

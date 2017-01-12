@@ -1,0 +1,246 @@
+
+header {
+  position: relative;
+  z-index: 2;
+
+  display: block;
+  margin: 0 auto;
+  padding: 140px 0 0px;
+
+  background: #fff;
+
+  @include respond-to(large) {
+    padding-top: 90px;
+    padding-bottom: 50px;
+    height: $header-height;
+  }
+
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 250ms ease 750ms, transform 350ms ease-out 750ms;
+
+  .loading & {
+    // opacity: 0;
+    transform: translate3d(0, 0, 0);
+    transition: opacity 250ms, transform 250ms;
+  }
+
+  .logo svg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 15px;
+    z-index: 3;
+
+    margin: auto;
+    width: 100px;
+
+    @include respond-to(large) {
+      top: auto;
+      bottom: 15px;
+      width: 100px;
+    }
+
+    .hexagon {
+      stroke: transparent;
+      stroke-width: 0px;
+      fill: $color-primary;
+    }
+
+    .logo-graphic {
+      opacity: 1;
+      transition: opacity 750ms ease 750ms;
+
+      stroke: transparent;
+      fill: transparent;
+
+      .loading & {
+        // opacity: 0;
+        transition: opacity 250ms;
+      }
+    }
+
+    opacity: 1;
+    transform: scale(1);
+    transform-origin: top;
+    transition: opacity 500ms, transform 1s $easeout 1250ms;
+
+    .loading & {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  nav {
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+
+    padding: 0 $spacing;
+
+    opacity: 1;
+    transition: opacity 500ms ease 500ms;
+
+    text-align: center;
+
+    &.right {
+      display: none;
+    }
+
+    .hide-on-large {
+      display: inline-block;
+      @include respond-to(large) {
+        display: none !important;
+      }
+    }
+
+    @include respond-to(large) {
+      &.left {
+        padding-right: 0;
+        text-align: left;
+      }
+      &.right {
+        display: block;
+        padding-left: 0;
+        text-align: right;
+      }
+    }
+    @include respond-to(xlarge) {
+      &.left {
+        padding-left: 100px;
+      }
+
+      &.right {
+        padding-right: 100px;
+      }
+    }
+
+    @include respond-to(xxlarge) {
+      &.left {
+        padding-left: 120px;
+      }
+
+      &.right {
+        padding-right: 120px;
+      }
+    }
+
+    .button {
+      font-weight: 400;
+      margin: 0 auto;
+      display: block;
+      max-width: 200px;
+      @include respond-to(medium) {
+        // display: inline-block;
+      }
+      @include respond-to(large) {
+        display: inline-block;
+        margin-left: $spacing;
+      }
+    }
+
+    .disabled,
+    a:not(.button) {
+      overflow: hidden;
+      position: relative;
+
+      vertical-align: middle;
+      display: inline-block;
+      margin: 0 $spacing/2;
+      padding: 0;
+
+      line-height: 54px;
+
+      font-size: 18px;
+      text-decoration: none;
+      color: $color-gray-lighter;
+
+      opacity: 1;
+      transform: translate3d(0,0,0);
+      transition: opacity 750ms, transform 500ms;
+      transition-delay: 1000ms;
+
+      &.disabled {
+        pointer-events: none;
+      }
+
+      &.disabled,
+      &[href^="#"] {
+        font-style: italic;
+      }
+
+
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:after {
+        content: '';
+
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        display: block;
+        width: 0px;
+        height: 2px;
+
+        background: $color-gray-dark;
+
+        transform: translate3d(0,100%,0);
+        transition: transform 150ms, width 150ms;
+      }
+
+      &.active,
+      &:hover {
+        color: $color-gray-dark;
+        &:after {
+          width: 100%;
+          transform: translate3d(0,0,0);
+        }
+      }
+
+      @include respond-to(large) {}
+      @include respond-to(xxlarge) {
+        margin: 0 $spacing;
+      }
+    }
+
+    .loading & {
+      opacity: 0;
+
+      a {
+        opacity: 0;
+        transform: translate3d(0,0,0);
+      }
+    }
+  }
+
+  html[svef-site='svef'] & {
+    .logo svg {
+      .logo-graphic.logo-svef {
+        fill: white;
+      }
+    }
+  }
+  html[svef-site='awards'] & {
+    .logo svg {
+      .logo-graphic.logo-awards {
+        fill: white;
+      }
+    }
+  }
+  html[svef-site='conf'] & {
+    .logo svg {
+      .logo-graphic.logo-conf {
+        fill: white;
+      }
+    }
+  }
+}
