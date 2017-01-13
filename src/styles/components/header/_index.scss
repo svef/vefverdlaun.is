@@ -141,7 +141,7 @@ header {
       }
     }
 
-    .disabled,
+    .disabled:not(.button),
     a:not(.button) {
       overflow: hidden;
       position: relative;

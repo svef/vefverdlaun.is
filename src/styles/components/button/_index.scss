@@ -34,6 +34,11 @@
     opacity: 0.8;
   }
 
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
   &.outline {
     background: white;
     border: 1px solid #E0E0E0;

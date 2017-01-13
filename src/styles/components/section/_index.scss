@@ -83,22 +83,22 @@ section.fphero {
     z-index: 1;
 
     margin: 0 auto $spacing;
-    padding: 100px 0 0;
+    padding: 20px 0 0;
 
     color: $color-primary;
     font-weight: 700;
-    font-size: 60px;
+    font-size: 100px;
     line-height: 1.35;
     text-align: center;
 
     @include respond-to(medium) {
       padding-top: 150px;
-      font-size: 100px;
+      font-size: 200px;
     }
 
     @include respond-to(large) {
-      padding-top: 200px;
-      font-size: 120px;
+      padding-top: 40px;
+      font-size: 300px;
     }
   }
 
