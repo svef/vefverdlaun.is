@@ -1,7 +1,7 @@
 import always from './always'
 
 export default {
-  path: '/schedule.html',
+  path: '/domnefnd.html',
   load: () => {
     always()
   },

@@ -5,20 +5,51 @@ mixin pagetitle(text, color = 'primary')
       span=text
       include /images/hexagon.svg
 
-mixin item(title, subtitle = '', image = '', color = 'primary', num = '')
-  .item(class=`color-${color}`)
+mixin item(title, subtitle = '', image = '', color = 'primary', num = false)
+  .item(class=`color-${color}` id=util.slug(title))
     grid
       column.large-3
         if image
           .item__image
             img(src=image, alt='')
       column.large-up-offset-1.large-6
-        h2.item__title= title
+        h2.item__title(num=num)= title
         if subtitle
           p.item__subtitle= subtitle
         .item__content
           if block
             block
+
+mixin flokkur(title = {}, info = {})
+  +item(title.title || '', title.subtitle || '', '', 'red')
+    p!=info.description || ''
+    if info.examples && info.examples.length > 0
+      p: small
+        | Dæmi um verkefni sem hafa hlotið viðurkenningu í þessum flokki:&nbsp;
+        - var count = 1
+        each example in info.examples
+          =(count === info.examples.length ? ' og ' : '')
+          b=example
+          =(count < info.examples.length - 1 ? ', ' : '')
+          - count++
+
+mixin nominatedcat(title, subtitle, nominees)
+  column.large-up-offset-1.large-3
+    .item
+      h2.item__title.no-num
+        =title
+        if subtitle
+          small.item__subtitle=subtitle
+      if nominees
+        .item__content
+          each nominee in nominees
+            p.nominee(class=nominee.winner ? 'winner' : '')
+              if nominee.link
+                a(href=nominee.link target='_blank')=nominee.title
+              else
+                =nominee.title
+              if nominee.coop
+                small=nominee.coop
 
 mixin schedule(heading)
   .schedule
