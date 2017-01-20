@@ -19,25 +19,30 @@
   }
 
   &__nominee {
+    margin-bottom: 40px;
     font-size: 16px;
     line-height: 1.35;
 
+    .no-link,
     a {
       display: inline-block;
-      color: $color-primary;
+      color: $color-gray;
+      font-weight: 700;
+    }
 
+    a {
+      color: $color-blue;
       text-decoration: none;
 
       &:hover {
         color: $color-blue;
       }
     }
-    small {
-      padding-top: 10px;
+    > span {
       display: block;
-      color: $color-gray-light;
+      padding-top: 10px;
+      color: $color-gray;
       font-weight: 400;
-      font-size: 14px;
     }
 
     &.winner {

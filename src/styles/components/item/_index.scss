@@ -27,6 +27,7 @@ body {
     padding-top: 0;
     padding-left: 48px;
     padding-bottom: 20px;
+    margin-bottom: 0;
 
     font-size: 32px;
     color: $color-gray;
@@ -91,6 +92,10 @@ body {
   &__subtitle {
     font-size: 28px;
     line-height: 1;
+
+    .item__title + & {
+      margin-top: -10px;
+    }
   }
 
   &__content {

@@ -8,11 +8,11 @@ mixin pagetitle(text, color = 'primary')
 mixin item(title, subtitle = '', image = '', color = 'primary', num = false)
   .item(class=`color-${color}` id=util.slug(title))
     grid
-      column.large-3
+      //- column.large-3
         if image
           .item__image
             img(src=image, alt='')
-      column.large-up-offset-1.large-6
+      column.large-up-offset-1.large-10
         h2.item__title(num=num)= title
         if subtitle
           p.item__subtitle= subtitle
@@ -23,11 +23,11 @@ mixin item(title, subtitle = '', image = '', color = 'primary', num = false)
 mixin listand(list)
   - var count = 1
   if list.length === 1
-    b=list[0]
+    span=list[0]
   else
     each item in list
       =(count === list.length ? ' og ' : '')
-      b=item
+      span=item
       =(count < list.length - 1 ? ', ' : '')
       - count++
 
@@ -73,12 +73,12 @@ mixin nominee(title, href, partners)
     if href
       a(href=href target='_blank')=title
     else
-      =title
+      span.no-link=title
     if partners
       if typeof partners === 'string'
-        small=partners
+        span=partners
       else
-        small
+        span
           +listand(partners)
 
 mixin winner(title, href, partners)
