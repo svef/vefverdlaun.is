@@ -3,118 +3,176 @@ extends /templates/shared/_layout
 block content
   +pagetitle('Tilnefningar', 'blue')
 
-  grid
-    column.large-up-offset-1.large-11
+  section: grid
+    column.large-up-offset-1.large-10
       h3 Tilnefningar og sigurvegarar 2015
 
-    column.large-up-offset-1.large-4
-      +category('Besti íslenski vefurinn')
-        +winner('Tix Miðasala', 'http://www.tix.is', 'Skapalón')
+  +item('Besti íslenski vefurinn', '', '', 'blue')
+    grid.text-left
+      column.large-offset.large-10
         p Dómnefnd velur þann vef sem þykir fremstur meðal jafningja, en besti íslenski vefurinn er að vanda valinn úr tilnefndum vefjum í neðangreindum flokkum.
+        +winner('Tix Miðasala', 'http://www.tix.is', 'Skapalón')
 
-    column.large-up-offset-1.large-4
-      +category('Besta hönnun og viðmót')
-        +winner('VÍS.is', 'http://vis.is', 'Kolibri')
+  +item('Besta hönnun og viðmót', '', '', 'blue')
+    grid.text-left
+      column.large-offset.large-10
         p Dómnefnd velur þann vef sem þykir skara fram úr í samþættingu á góðu notendaviðmóti og góðri hönnun sem svo spilar vel með starfsemi fyrirtækisins eða vefsins sem um ræðir.
+        +winner('VÍS.is', 'http://vis.is', 'Kolibri')
 
-    column.large-up-offset-1.large-4
-      +category('Val fólksins')
-        +winner('Nordic Visitor', 'https://www.nordicvisitor.com/', 'Kosmos og Kaos, DaCoda og Snark')
+  +item('Val fólksins', '', '', 'blue')
+    grid.text-left
+      column.large-offset.large-10
         p
           | Félagsmenn SVEF velja þann vef sem þeim þótti athyglisverðastur á árinu,
           | valið er að mörgu leiti opið en leitast er við að finna vef sem þótti vera
           | með áhugaverða nálgun á framsetningu efnis, notkun á tækni, uppbyggingu innihalds o.s.frv. Valið er úr tilnefndum vefjum í neðangreindum flokkum.
+        +winner('Nordic Visitor', 'https://www.nordicvisitor.com/', 'Kosmos og Kaos, DaCoda og Snark')
 
-    column.large-up-offset-1.large-4
-      +category('Frumlegasti vefurinn')
-        +winner('Ljósleiðarinn', 'http://www.ljosleidarinn.is', 'Kosmos og Kaos, Koala, Hvíta Húsið')
+  +item('Frumlegasti vefurinn', '', '', 'blue')
+    grid.text-left
+      column.large-offset.large-10
         p Dómnefnd velur þann vef sem þykir frumlegastur. Hér er horft til þátta eins og best útfærðu nýjungarinnar eða óhefðbundinnar nálgunar við viðfangsefnið. Leitað er að vef sem sýnir að frumkvæði og vinnubrögð sem ganga bak rótgrónum aðferðum skila ferskri útkomu.
+        +winner('Ljósleiðarinn', 'http://www.ljosleidarinn.is', 'Kosmos og Kaos, Koala, Hvíta Húsið')
 
-  grid.text-center
-    column.large-up-offset-1.large-3
-      +category('Aðgengilegir vefir')
+  +item('Aðgengilegir vefir', '', '', 'blue')
+    grid.text-left
+      column.large-10
         +winner('Öryrkjabandalag Íslands', 'http://obi.is', 'Stefna, Fúnksjón og Sjá')
+      column.large-5
         +nominee('Framkvæmdasýsla ríkisins', 'http://fsr.is', 'Hugsmiðjan')
+      column.large-up-offset-1.large-5
         +nominee('Háskólinn í Reykjavík', 'http://hr.is', 'Hugsmiðjan og Skapalón')
+      column.large-5
         +nominee('Hljóðbókasafn Íslands', 'http://hbs.is', 'Prógramm ehf.')
+      column.large-up-offset-1.large-5
         +nominee('Netbanki Landsbankans', 'https://netbanki.landsbankinn.is')
 
-    column.large-up-offset-1.large-3
-      +category('Vefmiðlar')
+  +item('Vefmiðlar', '', '', 'blue')
+    grid.text-left
+      column.large-10
         +winner('Stundin', 'http://www.stundin.is', 'Útgáfufélagið Stundin ehf, Jón Ingi Stefánsson og Egill Sigurðarson')
+      column.large-5
         +nominee('Fréttatíminn', 'http://www.frettatiminn.is', 'Vefstofan')
+      column.large-up-offset-1.large-5
         +nominee('Kjarninn.is', 'http://kjarninn.is', 'Overcast software ehf.')
+      column.large-5
         +nominee('KrakkaRÚV', 'http://www.krakkaruv.is', 'Nýmiðladeild RÚV, Björn Salvador og Jón Frímannsson')
+      column.large-up-offset-1.large-5
         +nominee('RÚV', 'http://www.RUV.is', 'Nýmiðladeild RÚV, Björn Salvador og Jón Frímannsson')
 
-    column.large-up-offset-1.large-3
-      +category('Non-profit vefir')
+  +item('Non-profit vefir', '', '', 'blue')
+    grid.text-left
+      column.large-10
         +winner('Bréf til bjargar lífi', 'http://www.amnesty.is/bref-til-bjargar-lifi', 'Hugsmiðjan og Brandenburg')
+      column.large-5
         +nominee('Eldhúsatlasinn', 'http://www.eldhusatlasinn.is')
+      column.large-up-offset-1.large-5
         +nominee('VR', 'http://www.vr.is', 'Sendiráðið og Sjá')
+      column.large-5
         +nominee('SOS á Íslandi', 'http://www.sos.is', 'TM Software')
+      column.large-up-offset-1.large-5
         +nominee('Öryrkjabandalag Íslands', 'http://www.obi.is', 'Stefna og Fúnksjón')
 
-    column.large-up-offset-1.large-3
-      +category('Opinberir vefir')
+  +item('Opinberir vefir', '', '', 'blue')
+    grid.text-left
+      column.large-10
         +winner('Ísland.is', 'https://www.island.is', 'Advania, Hugsmiðjan og Scytl')
+      column.large-5
         +nominee('Búrfellslundur', 'http://burfellslundur.landsvirkjun.is/', 'Jónsson & Le’macks, Mannvit og Skapalón')
+      column.large-up-offset-1.large-5
         +nominee('Hverfisskipulag Reykjavíkur', 'http://www.hverfisskipulag.is', 'Brandenburg')
+      column.large-5
         +nominee('Visit Iceland', 'http://visiticeland.com', 'Skapalón')
+      column.large-up-offset-1.large-5
         +nominee('Vínbúðin', 'http://www.vinbudin.is', 'TM software')
 
-    column.large-up-offset-1.large-3
-      +category('Öpp / Veföpp')
+  +item('Öpp / Veföpp', '', '', 'blue')
+    grid.text-left
+      column.large-10
         +winner('QuizUp.com', 'http://www.quizup.com')
+      column.large-5
         +nominee('Aur', 'http://www.aur.is', 'Stokkur og Nova')
+      column.large-up-offset-1.large-5
         +nominee('Gengi.is', 'http://gengi.is', 'Kolibri')
+      column.large-5
         +nominee('Húsnæðislánareiknivél Íslandsbanka', 'https://www.islandsbanki.is/reiknivel', 'Skapalón, Advania og Sjá')
+      column.large-up-offset-1.large-5
         +nominee('Mappan – vefapp', 'https://mappan.is/mappan/#/login', 'Kolibri')
 
-    column.large-up-offset-1.large-3
-      +category('Markaðsherferðir á netinu')
+  +item('Markaðsherferðir á netinu', '', '', 'blue')
+    grid.text-left
+      column.large-10
         +winner('Innri fegurð', 'http://innrifegurd.bluelagoon.is', 'Kolibri og Döðlur')
+      column.large-5
         +nominee('EVE Online', 'http://www.eveonline.com')
+      column.large-up-offset-1.large-5
         +nominee('Golfleikur Varðar', 'http://golfleikur.vordur.is/', 'Sendiráðið og Íslenska')
+      column.large-5
         +nominee('Landsbankinn – Iceland Airwaves', 'https://www.landsbankinn.is/icelandairwaves/', 'Jónsson & Le’macks og Aranja')
+      column.large-up-offset-1.large-5
         +nominee('Útmeð\'a', 'http://www.utmeda.is', 'Tjarnargatan')
 
-    column.large-up-offset-1.large-3
-      +category('Þjónustusvæði starfsmanna')
+  +item('Þjónustusvæði starfsmanna', '', '', 'blue')
+    grid.text-left
+      column.large-10
         +winner('Flugan – innri vefur Isavia og dótturfélaga', '', 'Sendiráðið og Fúnksjón')
+      column.large-5
         +nominee('Fræðslusetur Starfsmenntar og námskeiðakerfi', '', 'Fúnksjón og Advania')
+      column.large-up-offset-1.large-5
         +nominee('Innri vefur Garðabæjar', '', 'Advania')
+      column.large-5
         +nominee('Innri vefur Reykjavíkurborgar', '', 'Fúnksjón og IxInternet.de')
+      column.large-up-offset-1.large-5
         +nominee('Innri vefur Símans')
 
-    column.large-up-offset-1.large-3
-      +category('Þjónustusvæði viðskiptavina')
+  +item('Þjónustusvæði viðskiptavina', '', '', 'blue')
+    grid.text-left
+      column.large-10
         +winner('Netbanki Landsbankans', 'https://netbanki.landsbankinn.is')
+      column.large-5
         +nominee('Mappan – vefapp', 'https://mappan.is/mappan/#/login', 'Kolibri')
+      column.large-up-offset-1.large-5
         +nominee('Þjónustuvefur Creditinfo', 'https://www.creditinfo.is/kynningarefni/thjonustuvefur.aspx', 'Skapalón')
+      column.large-5
         +nominee('Þjónustuvefur Ljósleiðarans', 'http://thjonustuvefur.ljosleidarinn.is', 'Kosmos og Kaos, Koala')
+      column.large-up-offset-1.large-5
         +nominee('Þjónustuvefur Símans, einstaklingar', 'https://www.siminn.is/adstod/klaradu-malid/thjonustuvefur/')
 
-    column.large-up-offset-1.large-3
-      +category('Einstaklingsvefir')
+  +item('Einstaklingsvefir', '', '', 'blue')
+    grid.text-left
+      column.large-10
         +winner('Olafur Arnalds', 'http://www.olafurarnalds.com', 'Ueno')
+      column.large-5
         +nominee('Eldhúsatlasinn', 'http://www.eldhusatlasinn.is')
+      column.large-up-offset-1.large-5
         +nominee('Ég er Unik', 'https://egerunik.is/', 'Advania')
+      column.large-5
         +nominee('Rúnar Guðbjartsson', 'http://roogud.com/')
+      column.large-up-offset-1.large-5
         +nominee('Stuck in Iceland', 'http://www.stuckiniceland.com')
 
-    column.large-up-offset-1.large-3
-      +category('Fyrirtækjavefir', 'lítil og meðalstór fyrirtæki')
+  +item('Fyrirtækjavefir', 'lítil og meðalstór fyrirtæki', '', 'blue')
+    grid.text-left
+      column.large-10
         +winner('Tix Miðasala', 'http://www.tix.is', 'Skapalón')
+      column.large-5
         +nominee('Ljósleiðarinn', 'http://www.ljosleidarinn.is', 'Kosmos og Kaos, Koala, Hvíta Húsið')
+      column.large-up-offset-1.large-5
         +nominee('Sendiráðið', 'http://www.sendiradid.is', 'Sendiráðið')
+      column.large-5
         +nominee('TripCreator', 'https://tripcreator.com', 'Kapall Markaðsráðgjöf')
+      column.large-up-offset-1.large-5
         +nominee('Vík Prjónsdóttir', 'http://www.vikprjonsdottir.com', 'Jordi Serra Vega, Gunnar Þorvaldsson og Sendiráðið')
 
-    column.large-up-offset-1.large-3
-      +category('Fyrirtækjavefir', 'stærri fyrirtæki')
+  +item('Fyrirtækjavefir', 'stærri fyrirtæki', '', 'blue')
+    grid.text-left
+      column.large-10
         +winner('Meniga.com', 'http://www.meniga.com', 'Róbert Örn Einarsson')
+      column.large-5
         +nominee('Dominos.is', 'http://www.dominos.is', 'Skapalón')
+      column.large-up-offset-1.large-5
         +nominee('Háskólinn í Reykjavík', 'http://hr.is', 'Hugsmiðjan og Skapalón')
+      column.large-5
         +nominee('Nordic Visitor', 'https://www.nordicvisitor.com/', 'Kosmos og Kaos, DaCoda og Snark')
+      column.large-up-offset-1.large-5
         +nominee('Orka náttúrunnar', 'http://www.on.is', 'Kosmos og Kaos og Kapall Markaðsráðgjöf')
