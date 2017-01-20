@@ -5,121 +5,119 @@ block content
 
   grid
     column.large-up-offset-1.large-11
-      h3 Tilnefningar 2015
+      h3 Tilnefningar 2016
 
-    +nominatedcat(
-      'Aðgengilegir vefir', 'lítil og meðalstór fyrirtæki',
-      [
-        {
-          title: 'Öryrkjabandalag Íslands',
-          coop: 'Stefna, Fúnksjón og Sjá',
-          winner: true,
-          link: 'http://obi.is',
-        },
-        {
-          title: 'Framkvæmdasýsla ríkisins',
-          coop: 'Hugsmiðjan',
-          link: 'http://fsr.is',
-        },
-        {
-          title: 'Háskólinn í Reykjavík',
-          coop: 'Hugsmiðjan og Skapalón',
-          link: 'http://hr.is',
-        },
-        {
-          title: 'Hljóðbókasafn Íslands',
-          coop: 'Prógramm ehf.',
-          link: 'http://hbs.is',
-        },
-        {
-          title: 'Netbanki Landsbankans',
-          link: 'https://netbanki.landsbankinn.is',
-        }
-      ]
-    )
-    +nominatedcat(
-      'Fyrirtækjavefur ársins', 'lítil og meðalstór fyrirtæki',
-      [
-        {
-          title: 'Öryrkjabandalag íslands',
-          coop: 'Stefna, Funksjón og Sjá'
-        },
-        {
-          title: 'Öryrkjabandalag íslands',
-          coop: 'Stefna, Funksjón og Sjá'
-        },
-      ]
-    )
-    +nominatedcat(
-      'Fyrirtækjavefur ársins', 'lítil og meðalstór fyrirtæki',
-      [
-        {
-          title: 'Öryrkjabandalag íslands',
-          coop: 'Stefna, Funksjón og Sjá'
-        },
-        {
-          title: 'Öryrkjabandalag íslands',
-          coop: 'Stefna, Funksjón og Sjá'
-        },
-      ]
-    )
-    +nominatedcat(
-      'Fyrirtækjavefur ársins', 'lítil og meðalstór fyrirtæki',
-      [
-        {
-          title: 'Öryrkjabandalag íslands',
-          coop: 'Stefna, Funksjón og Sjá'
-        },
-        {
-          title: 'Öryrkjabandalag íslands',
-          coop: 'Stefna, Funksjón og Sjá'
-        },
-      ]
-    )
-    +nominatedcat(
-      'Fyrirtækjavefur ársins', 'lítil og meðalstór fyrirtæki',
-      [
-        {
-          title: 'Öryrkjabandalag íslands',
-          coop: 'Stefna, Funksjón og Sjá'
-        },
-        {
-          title: 'Öryrkjabandalag íslands',
-          coop: 'Stefna, Funksjón og Sjá'
-        },
-      ]
-    )
+  //- grid
+    column.large-up-offset-1.large-4
+      +category('Besti íslenski vefurinn')
+        //- +winner('?')
+        p Dómnefnd velur þann vef sem þykir fremstur meðal jafningja, en vefur ársins er að vanda valinn úr tilnefndum vefjum í neðangreindum flokkum.
 
-  +item('Conference Venue', '', '', 'primary')
-    img(src='/images/harpa-hjupur.jpg')
+    column.large-up-offset-1.large-4
+      +category('Besta hönnun og viðmót')
+        //- +winner('?')
+        p Dómnefnd velur þann vef sem þykir skara fram úr í samþættingu á góðu notendaviðmóti og góðri hönnun sem svo spilar vel með starfsemi fyrirtækisins eða vefsins sem um ræðir.
 
-    p Harpa is one of Reykjavik‘s greatest landmarks, located by the picturesque Reykjavík harbour in the city centre and features stunning views of the surrounding mountains and the North Atlantic Ocean. Everything you need is within reach like hotels, restaurants, museums, art galleries and shopping as well as various activities and sightseeing in Iceland‘s exotic nature.
+    column.large-up-offset-1.large-4
+      +category('Val fólksins')
+        //- +winner('?')
 
-    p: a.button.color-primary.outline(href='https://en.harpa.is/harpa' target='_blank') Learn more about Harpa
+        p Félagsmenn SVEF velja þann vef sem þeim þótti athyglisverðastur á árinu, valið er að mörgu leiti opið en leitast er við að finna vef sem þótti vera með áhugaverða nálgun á framsetningu efnis, notkun á tækni, uppbyggingu innihalds o.s.frv.
 
-  +item('About', '', '', 'primary')
-    p IceWeb is an international web conference that has been held since 2006 and covers web related elements such as design, development, marketing, content and performance to name a few.
+    column.large-up-offset-1.large-4
+      +category('Viðurkenningar')
+        p Í ár var bryddað upp á þeirri nýbreytni að leita til félaga og áhugafólks í vefbransanum með tilnefningar til viðurkenninga fyrir vel unnin störf á árinu. Þetta árið verða eftirfarandi viðurkenningar veittar:
 
-    p This years event we are proud to present amazing speakers who bring diverse and deep expertise on various topics significant to the web community.
+        ul.blue
+          li Vefhetja ársins
+          li Opin hugbúnaður/verkefni ársins
+          li Besti einstaklingsvefur
 
-    p Iceweb is organized by SVEF (the Icelandic Web Industry Association). SVEF is a non profit organization devoted to sharing and bringing knowledge to the web industry in Iceland.
+  grid.text-center
+    column.large-up-offset-1.large-3
+      +category('Fyrirtækjavefur ársins', 'lítil og meðalstór fyrirtæki')
+        +nominee('Kosmos & Kaos', 'http://kosmosogkaos.is')
+        +nominee('Sendiráðið', 'http://www.sendiradid.is')
+        +nominee('Sinfóníuhljómsveit Íslands', 'http://www.sinfonia.is/', ['Hugsmiðjan'])
+        +nominee('Tix Miðasala', 'http://tix.is')
+        +nominee('ueno.', 'http://ueno.co')
 
-    p: a.button.color-svef.outline(href='http://svef.is' target='_blank') Learn more about SVEF
+    column.large-up-offset-1.large-3
+      +category('Fyrirtækjavefur ársins', 'stærri fyrirtæki, 50+')
+        +nominee('Ársskýrsla Landsbankans 2015', 'https://arsskyrsla2015.landsbankinn.is/', ['Jónsson & Le‘macks'])
+        +nominee('Nýr vefur Eimskips', 'http://www.eimskip.com/', ['Skapalón', 'Vettvangur'])
+        +nominee('Reykjavik Excursions', 'https://www.re.is/', ['Hugsmiðjan'])
+        +nominee('Sjóvá', 'https://www.sjova.is/', ['Kosmos & Kaos', 'Vettvangur'])
+        +nominee('Vörður tryggingafélag', 'http://www.vordur.is', ['Sendiráðið'])
 
-  //- Hide until vefverdlaun.is is ready
-  //- +item('the Icelandic Web Awards', '', '', 'primary')
-  //-   p In addition to this conference, SVEF organizes the Icelandic Web Awards. This year they will be held on the same day, right after the conference. Admittance is free so we encourage all guests to check it out.
+    column.large-up-offset-1.large-3
+      +category('Efnis- og fréttaveita ársins')
+        +nominee('Hmagasin', 'http://www.hmagasin.is', ['Hugsmiðjan '])
+        +nominee('K100 útvarpsstöð', 'http://www.k100.is', ['Sendiráðið'])
+        +nominee('Nútíminn', 'http://www.nutiminn.is', ['Guðmundur Sigursteinn Jónsson forritari'])
+        +nominee('Tímamót', 'http://www.timamot.is', ['Hugsmiðjan', 'Döðlur'])
+        +nominee('Umræðan – Umræðuvefur Landsbankans', 'https://umraedan.landsbankinn.is/', ['Jónsson & Le‘Macks'])
 
-  //-   p: a.button.color-awards.outline(href='http://vefverdlaun.is' target='_blank') Learn more about the <b>Icelandic Web Awards</b>
+    column.large-up-offset-1.large-3
+      +category('Opinberi vefur ársins')
+        +nominee('Einkaleyfastofan', 'http://www.els.is', ['Kosmos & Kaos'])
+        +nominee('Kópavogsbær', 'http://www.kopavogur.is', ['Stefna'])
+        +nominee('Nýr vefur Hafnarfjarðarbæjar', 'http://www.hafnarfjordur.is/', ['Hugsmiðjan'])
+        +nominee('Nýr vefur Íslandsstofu', 'http://www.islandsstofa.is', ['Kosmos & Kaos', 'DaCoda'])
+        +nominee('Veitur', 'https://www.veitur.is', ['Kosmos & Kaos'])
 
-  +item('Contact info', '', '', 'primary')
-    p For additional information, future speaking opportunities or sponsorship please contact:
+    column.large-up-offset-1.large-3
+      +category('Markaðsvefur ársins')
+        +nominee('Go Digital', 'https://2016.godigital.is', ['Kolibri'])
+        +nominee('Iceland Academy', 'http://inspired.visiticeland.com/academy', ['Skapalón', 'Íslenska auglýsingastofan'])
+        +nominee('Iceland Airwaves vefur Landsbankans', 'https://www.landsbankinn.is/icelandairwaves/', ['Jónsson & Le‘macks', 'Aranja'])
+        +nominee('PrescribeWellness', 'http://www.prescribewellness.com/', ['ueno.'])
+        +nominee('Zero Financial', 'https://zerofinancial.com/', ['ueno.'])
 
-    p
-      | Unnur Mjöll S. Leifsdóttir
-      br
-      | Director of Operation - SVEF
-    p
-      a.button.color-primary.outline(href='mailto:unnur@svef.is') unnur@svef.is
-      | &nbsp;
-      a.button.color-primary.outline(href='tel:+3548241979') +354 824 1979
+    column.large-up-offset-1.large-3
+      +category('App ársins')
+        +nominee('Aur Posi', 'https://aur.is/posi', ['Stokkur Software ehf.'])
+        +nominee('Íslandsbanka Appið', 'https://www.islandsbanki.is/einstaklingar/netlausnir/app/', ['Kolibri'])
+        +nominee('Kass', 'https://kass.is', ['Memento Payments'])
+        +nominee('Strætó app', 'https://www.straeto.is/is/verslun/straeto-appi', ['Stokkur Software ehf.'])
+        +nominee('WOW appið', 'https://wowair.is/flug/wow-app/', ['Stokkur Software ehf.'])
+
+    column.large-up-offset-1.large-3
+      +category('Vefapp ársins')
+        +nominee('Betri Reykjavík', 'https://betrireykjavik.is', ['Reykjavíkurborg'])
+        +nominee('Farsímabanki Landsbankans - L.is', 'https://l.is')
+        +nominee('Híbýli', 'https://hiby.li', ['Sölvi Logason', 'Halldór Bjarni Þórhallsson'])
+        +nominee('Innranet Logos lögfræðistofu', '', ['Sendiráðið'])
+        +nominee('Sprotarnir', 'http://sprotarnir.is/', ['Aranja', 'Kári Gunnarsson', 'Felix Bergsson'])
+
+    column.large-up-offset-1.large-3
+      +category('Samfélagsvefur ársins')
+        +nominee('Alvogen - samfélagsverkefni', 'http://csr.alvogen.com', ['Skapalón'])
+        +nominee('Krabbameinsfélag Íslands', 'http://www.krabb.is', ['Hugsmiðjan'])
+        +nominee('Nýr vefur Rauða krossins á Íslandi', 'https://www.raudikrossinn.is/', ['Hugsmiðjan'])
+        +nominee('Spurt og svarað um áliðnaðinn', 'http://www.samal.is', ['Stefna', 'Jónsson & Le‘macks'])
+        +nominee('Styrktarfélag lamaðra og fatlaðra', 'http://www.slf.is', ['Stefna'])
+
+    column.large-up-offset-1.large-3
+      +category('Vefverslun ársins')
+        +nominee('BESTSELLER á Íslandi', 'https://www.bestseller.is', ['Vettvangur'])
+        +nominee('Húsasmiðjan', 'http://www.husa.is', ['Vettvangur'])
+        +nominee('Tix Miðasala', 'http://tix.is')
+        +nominee('Vefverslun IKEA', 'http://www.ikea.is')
+        +nominee('Verve Wine', 'https://www.vervewine.com/', ['ueno.'])
+
+    column.large-up-offset-1.large-3
+      +category('Innri vefur ársins')
+        +nominee('Flugan - innri vefur Isavia', '', ['Sendiráðið', 'Sigurjón Ólafsson'])
+        +nominee('Innranet Logos lögfræðistofu', '', ['Sendiráðið'])
+        +nominee('Team 66', '', ['Premis'])
+        +nominee('Uppfærður innrivefur Póstsins', '', ['Vettvangur'])
+        +nominee('Þjónustuvefur Ljósleiðarans', '', ['Kosmos & kaos', 'Koala ráðgjöf'])
+
+    column.large-up-offset-1.large-3
+      +category('Vefkerfi ársins')
+        +nominee('Arion banki - Velkomin í viðskipti', 'https://www.arionbanki.is/signup', ['Kosmos & Kaos'])
+        +nominee('Farsímabanki Landsbankans - L.is', 'https://l.is')
+        +nominee('FitSucccess fjarþjálfun', 'http://www.fitsuccess.is', ['Sigurjón Ólafsson', 'Arnar Ólafsson (hönnun)', 'Sendiráðið (vefun og forritun)'])
+        +nominee('Landsbankinn - Netbanki einstaklinga', 'https://netbanki.landsbanki.is')
+        +nominee('Landsbankinn - Netbanki fyrirtækja', 'https://www.fbl.is')
