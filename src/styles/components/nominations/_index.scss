@@ -1,121 +1,63 @@
 
-body {
-  counter-reset: item;
-}
-
-.item {
+.nomination {
   margin-bottom: $spacing * 6;
 
-  &__image {
-    display: block;
-    margin: 0 0 $spacing 48px;
-    width: 179px;
-    height: 200px;
-
-    @include respond-to(large) {
-      padding-left: 0;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-
-  &__image img {
-    max-width: 100%;
-  }
-
   &__title {
-    padding-top: 0;
-    padding-left: 48px;
-    padding-bottom: 20px;
-    margin-bottom: 0;
-
-    font-size: 32px;
+    padding: 0;
+    font-size: 30px;
+    line-height: 1.1;
     color: $color-gray;
     word-break: initial;
-
-    &:after {
-      content: none;
-    }
-
-    &:before {
-      counter-increment: item;
-      content: counter(item, decimal-leading-zero);
-
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      margin-right: 10px;
-      padding-bottom: 4px;
-
-      font-size: 32px;
-      line-height: 1;
-      font-weight: bold;
-      color: $color-green;
-
-      border-bottom-width: 4px;
-      border-bottom-style: solid;
-    }
-
-    &[num] {
-      padding-left: 0;
-      &:before {
-        position: static;
-        margin-right: 15px;
-        content: attr(num);
-      }
-    }
-
-    &.no-num {
-      padding-left: 0;
-      &:before {
-        display: none;
-      }
-    }
-
-    @include respond-to(large) {
-      padding-left: 0;
-      &:before {
-        left: -2em;
-      }
-      &[num] {
-        &:before {
-          position: absolute;
-          margin-right: 30px;
-          left: auto;
-          right: 100%;
-        }
-      }
-    }
   }
 
   &__subtitle {
-    font-size: 28px;
+    display: block;
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: 400;
     line-height: 1;
+  }
 
-    .item__title + & {
-      margin-top: -10px;
+  &__nominee {
+    margin-bottom: 40px;
+    font-size: 16px;
+    line-height: 1.35;
+
+    .no-link,
+    a {
+      display: inline-block;
+      color: $color-gray;
+      font-weight: 700;
+    }
+
+    a {
+      color: $color-blue;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-blue;
+      }
+    }
+    > span {
+      display: block;
+      padding-top: 10px;
+      color: $color-gray;
+      font-weight: 400;
+    }
+
+    &.winner {
+      font-size: 20px;
+      &, a {
+        color: $color-blue;
+        font-weight: 700;
+      }
+      a:hover {
+        color: $color-primary;
+      }
     }
   }
 
   &__content {
-    h3 {
-      padding-top: $spacing;
-      font-size: 22px;
-    }
-
-    p, li, blockquote {
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 1.35;
-
-      color: $color-gray;
-    }
-
-    blockquote {
-      margin-left: 0;
-    }
-
     ul {
       list-style-type: none;
       padding-left: $spacing*2;
@@ -145,64 +87,6 @@ body {
             background-image: url('data:image/svg+xml;utf8,<svg width="20px" height="15px" viewBox="0 0 20 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M19.788234,1.835294 L18.188234,0.235294 C18.031372,0.078429 17.850982,0 17.647059,0 C17.443135,0 17.262746,0.078429 17.105884,0.235294 L7.482353,9.858822 L2.894118,5.247057 C2.737254,5.105881 2.556864,5.035294 2.352941,5.035294 C2.149019,5.035294 1.968628,5.105881 1.811765,5.247057 L0.211765,6.847057 C0.070588,7.003922 0,7.184312 0,7.388235 C0,7.592159 0.070588,7.772549 0.211765,7.929413 L6.941178,14.682353 C7.082354,14.839216 7.258823,14.917647 7.470589,14.917647 C7.682355,14.917647 7.858824,14.839216 8,14.682353 L19.788234,2.917647 C19.929413,2.760782 20,2.576471 20,2.364705 C20,2.152939 19.929413,1.976471 19.788234,1.835294 Z" fill="#{$color}"></path></g></svg>');
           }
         }
-      }
-    }
-
-    > img {
-      display: block;
-      margin: 0 auto $spacing;
-      max-width: 100%;
-    }
-
-    .button {
-      margin-bottom: $spacing;
-    }
-
-    .button.padded {
-      margin-top: $spacing * 2;
-    }
-
-    .nominee {
-      a {
-        display: inline-block;
-        color: $color-primary;
-
-        text-decoration: none;
-
-        &:hover {
-          color: $color-blue;
-        }
-      }
-      small {
-        display: block;
-        color: $color-gray-light;
-        font-weight: 400;
-
-        &:before {
-          content: 'Samstarfsaðilar: ';
-        }
-        &:after {
-          content: '';
-        }
-      }
-
-      &.winner {
-        &, a {
-          color: $color-blue;
-          font-weight: 700;
-        }
-        a:hover {
-          color: $color-primary;
-        }
-      }
-    }
-  }
-
-
-  @each $name, $color in $colorArray {
-    &.color-#{$name} {
-      .item__title:before {
-        color: $color;
       }
     }
   }

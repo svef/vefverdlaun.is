@@ -78,6 +78,18 @@ section.fphero {
     }
   }
 
+  a:not(.button) {
+    text-decoration: none;
+
+    font-weight: bold;
+
+    color: $color-blue;
+
+    &:hover {
+      color: $color-red;
+    }
+  }
+
   .title {
     position: relative;
     z-index: 1;

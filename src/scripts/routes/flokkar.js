@@ -1,7 +1,7 @@
 import always from './always'
 
 export default {
-  path: '/workshop.html',
+  path: '/flokkar.html',
   load: () => {
     always()
   },

@@ -1,15 +1,13 @@
 
 import homeRoute from './home'
-import speakersRoute from './speakers'
-import workshopRoute from './workshop'
-import scheduleRoute from './schedule'
-import aboutRoute from './about'
+import domnefndRoute from './domnefnd'
+import flokkarRoute from './flokkar'
+import tilnefningarRoute from './tilnefningar'
 
 export default {
   [homeRoute.path]: homeRoute,
   [`${homeRoute.path}index.html`]: homeRoute,
-  [scheduleRoute.path]: scheduleRoute,
-  [speakersRoute.path]: speakersRoute,
-  [workshopRoute.path]: workshopRoute,
-  [aboutRoute.path]: aboutRoute,
+  [domnefndRoute.path]: domnefndRoute,
+  [flokkarRoute.path]: flokkarRoute,
+  [tilnefningarRoute.path]: tilnefningarRoute,
 }

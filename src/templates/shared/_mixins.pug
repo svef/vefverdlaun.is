@@ -5,20 +5,84 @@ mixin pagetitle(text, color = 'primary')
       span=text
       include /images/hexagon.svg
 
-mixin item(title, subtitle = '', image = '', color = 'primary', num = '')
-  .item(class=`color-${color}`)
+mixin item(title, subtitle = '', image = '', color = 'primary', num = false)
+  .item(class=`color-${color}` id=util.slug(title))
     grid
-      column.large-3
+      //- column.large-3
         if image
           .item__image
             img(src=image, alt='')
-      column.large-up-offset-1.large-6
-        h2.item__title= title
+      column.large-up-offset-1.large-10
+        h2.item__title(num=num)= title
         if subtitle
           p.item__subtitle= subtitle
         .item__content
           if block
             block
+
+mixin listand(list)
+  - var count = 1
+  if list.length === 1
+    span=list[0]
+  else
+    each item in list
+      =(count === list.length ? ' og ' : '')
+      span=item
+      =(count < list.length - 1 ? ', ' : '')
+      - count++
+
+mixin flokkur(title = {}, info = {})
+  +item(title.title || '', title.subtitle || '', '', 'red')
+    p!=info.description || ''
+    if info.examples && info.examples.length > 0
+      p: small
+        | Dæmi um verkefni sem hafa hlotið viðurkenningu í þessum flokki:&nbsp;
+        - var count = 1
+        +listand(info.examples)
+
+mixin nomination(title, subtitle, nominees)
+  column.large-up-offset-1.large-3
+    .nomination
+      h2.nomination__title.no-num
+        =title
+        if subtitle
+          small.nomination__subtitle=subtitle
+      if nominees
+        .nomination__content
+          each nominee in nominees
+            p.nominee(class=nominee.winner ? 'winner' : '')
+              if nominee.link
+                a(href=nominee.link target='_blank')=nominee.title
+              else
+                =nominee.title
+              if nominee.coop
+                small=nominee.coop
+
+mixin category(title, subtitle)
+  .nomination
+    h2.nomination__title.no-num
+      =title
+      if subtitle
+        small.nomination__subtitle=subtitle
+    if block
+      .nomination__content
+        block
+
+mixin nominee(title, href, partners)
+  p.nomination__nominee&attributes(attributes)
+    if href
+      a(href=href target='_blank')=title
+    else
+      span.no-link=title
+    if partners
+      if typeof partners === 'string'
+        span=partners
+      else
+        span
+          +listand(partners)
+
+mixin winner(title, href, partners)
+  +nominee(title, href, partners).winner
 
 mixin schedule(heading)
   .schedule
