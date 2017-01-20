@@ -83,7 +83,7 @@ section.fphero {
 
     font-weight: bold;
 
-    color: $color-blue;
+    color: $color-primary;
 
     &:hover {
       color: $color-red;
@@ -97,7 +97,7 @@ section.fphero {
     margin: 0 auto $spacing;
     padding: 20px 0 0;
 
-    color: $color-red;
+    color: $color-primary;
     font-weight: 700;
     font-size: 100px;
     line-height: 1.35;
