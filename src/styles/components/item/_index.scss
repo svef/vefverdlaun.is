@@ -98,6 +98,28 @@ body {
     }
   }
 
+  blockquote.judges {
+    border-left: 4px solid rgba($color-gray-light, 0.25);
+    padding-left: $spacing;
+    padding: $spacing/2 $spacing/2;
+
+    p {
+      font-size: 90%;
+
+      &:first-child:before {
+        content: 'Umsögn dómnefndar: „';
+        font-weight: 700;
+      }
+      &:last-child:after {
+        content: '“';
+      }
+    }
+
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   &__content {
     h3 {
       padding-top: $spacing;
@@ -119,6 +141,10 @@ body {
     ul {
       list-style-type: none;
       padding-left: $spacing*2;
+
+      ul {
+        padding-top: $spacing;
+      }
     }
 
     li {

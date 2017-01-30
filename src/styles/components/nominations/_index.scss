@@ -38,6 +38,7 @@
         color: $color-primary;
       }
     }
+    > b,
     > span {
       display: block;
       padding-top: 10px;
@@ -53,6 +54,11 @@
       }
       a:hover {
         color: $color-primary;
+      }
+
+      + blockquote {
+        margin-top: -$spacing;
+        margin-bottom: $spacing*2;
       }
     }
   }
