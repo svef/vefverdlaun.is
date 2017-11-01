@@ -34,9 +34,17 @@ mixin listand(list)
 mixin flokkur(title = {}, info = {})
   +item(title.title || '', title.subtitle || '', '', 'red')
     p!=info.description || ''
+
+    if info.cheap
+      p: small
+        | Ódýrara er að tilnefna verkefni í þessum flokk en öðrum flokkum.
+
     if info.examples && info.examples.length > 0
       p: small
-        | Dæmi um verkefni sem hafa hlotið viðurkenningu í þessum flokki:&nbsp;
+        if info.new
+          | eru dæmi um verkefni sem gætu hafa hlotið tilnefningu í þessum flokki.
+        else
+          | eru dæmi um verkefni sem hlotið hafa viðurkenningu í þessum flokki.
         - var count = 1
         +listand(info.examples)
 
