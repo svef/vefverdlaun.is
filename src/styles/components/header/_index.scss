@@ -127,18 +127,32 @@ header {
       }
     }
 
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-wrap: wrap;
+
+      min-height: 115px;
+      margin-top: -25px;
+      margin-left: 45px; // logo
+    }
+
+    .buttons-mobile {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      margin-top: $spacing;
+    }
+
     .button {
+      margin: 0 0 $spacing $spacing;
       font-weight: 400;
-      margin: 0 auto;
       display: block;
-      max-width: 200px;
-      @include respond-to(medium) {
-        // display: inline-block;
-      }
-      @include respond-to(large) {
-        display: inline-block;
-        margin-left: $spacing;
-      }
+      padding-left: $spacing;
+      padding-right: $spacing;
+      font-size: 18px;
     }
 
     .disabled:not(.button),
