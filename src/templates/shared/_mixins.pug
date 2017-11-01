@@ -41,12 +41,19 @@ mixin flokkur(title = {}, info = {})
 
     if info.examples && info.examples.length > 0
       p: small
-        if info.new
-          | eru dæmi um verkefni sem gætu hafa hlotið tilnefningu í þessum flokki.
-        else
-          | eru dæmi um verkefni sem hlotið hafa viðurkenningu í þessum flokki.
         - var count = 1
         +listand(info.examples)
+
+        if info.new
+          if info.examples.length === 1
+            | &nbsp;er dæmi um verkefni sem gæti hafa hlotið tilnefningu í þessum flokki.
+          else
+            | &nbsp;eru dæmi um verkefni sem gætu hafa hlotið tilnefningu í þessum flokki.
+        else
+          if info.examples.length === 1
+            | &nbsp;er dæmi um verkefni sem hlotið hefur viðurkenningu í þessum flokki.
+          else
+            | &nbsp;eru dæmi um verkefni sem hlotið hafa viðurkenningu í þessum flokki.
 
 mixin nomination(title, subtitle, nominees)
   column.large-up-offset-1.large-3
