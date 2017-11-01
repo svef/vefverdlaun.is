@@ -34,11 +34,26 @@ mixin listand(list)
 mixin flokkur(title = {}, info = {})
   +item(title.title || '', title.subtitle || '', '', 'red')
     p!=info.description || ''
+
+    if info.cheap
+      p: small
+        | Ódýrara er að tilnefna verkefni í þessum flokk en öðrum flokkum.
+
     if info.examples && info.examples.length > 0
       p: small
-        | Dæmi um verkefni sem hafa hlotið viðurkenningu í þessum flokki:&nbsp;
         - var count = 1
         +listand(info.examples)
+
+        if info.new
+          if info.examples.length === 1
+            | &nbsp;er dæmi um verkefni sem gæti hafa hlotið tilnefningu í þessum flokki.
+          else
+            | &nbsp;eru dæmi um verkefni sem gætu hafa hlotið tilnefningu í þessum flokki.
+        else
+          if info.examples.length === 1
+            | &nbsp;er dæmi um verkefni sem hlotið hefur viðurkenningu í þessum flokki.
+          else
+            | &nbsp;eru dæmi um verkefni sem hlotið hafa viðurkenningu í þessum flokki.
 
 mixin nomination(title, subtitle, nominees)
   column.large-up-offset-1.large-3

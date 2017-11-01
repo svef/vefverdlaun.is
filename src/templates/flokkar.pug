@@ -4,22 +4,23 @@ block content
   +pagetitle('Flokkar', 'red')
 
   +item('Fyrirkomulag', '', '', 'red')
-    p Íslensku vefverðlaunin 2016 verða veitt í 13 flokkum en fjöldi flokkanna endurspeglar breidd þeirra verkefna sem vefiðnaðurinn á Íslandi kemur að.
+    p Íslensku vefverðlaunin 2017 verða veitt í 13 flokkum en fjöldi flokkanna endurspeglar breidd þeirra verkefna sem vefiðnaðurinn á Íslandi kemur að.
 
     p Flokkar sem hægt er að tilnefna í:
 
     ul.red
-      li Fyrirtækjavefur ársins (lítil og meðalstór fyrirtæki)
-      li Fyrirtækjavefur ársins (stærri fyrirtæki, 50+)
+      li Fyrirtækjavefur ársins (lítil fyrirtæki)
+      li Fyrirtækjavefur ársins (meðalstór fyrirtæki)
+      li Fyrirtækjavefur ársins (stór fyrirtæki)
+      li Markaðsvefur ársins
+      li Vefverslun ársins
       li Efnis- og fréttaveita ársins
       li Opinberi vefur ársins
-      li Markaðsvefur ársins
-      li App ársins
-      li Vefapp ársins
-      li Samfélagsvefur ársins
-      li Vefverslun ársins
       li Innri vefur ársins
       li Vefkerfi ársins
+      li App ársins
+      li Samfélagsvefur ársins
+      li Gæluverkefni ársins, nýr flokkur
 
     p Dómnefnd veitir þar að auki tvenn auka verðlaun fyrir vefi sem skara fram úr:
 
@@ -29,10 +30,128 @@ block content
 
   +flokkur(
     {
-      title: 'Vefur ársins',
+      title: 'Fyrirtækjavefur ársins',
+      subtitle: 'Lítil fyrirtæki'
     },
     {
-      description: 'Dómnefnd velur þann vef sem þykir fremstur meðal jafningja, en vefur ársins er að vanda valinn úr tilnefndum vefjum í neðangreindum flokkum.',
+      description: 'Undir þennan flokk falla vefir fyrirtækja með 10 eða færri starfsmenn á launaskrá. Hér er átt við alla almenna vefi sem kynna þjónustu eða vörur viðkomandi fyrirtækis.',
+      examples: ['Tix']
+    }
+  )
+
+  +flokkur(
+    {
+      title: 'Fyrirtækjavefur ársins',
+      subtitle: 'Meðalstór fyrirtæki'
+    },
+    {
+      description: 'Undir þennan flokk falla vefir fyrirtækja með 11 til 80 starfsmenn á launaskrá. Hér er átt við alla almenna vefi sem kynna þjónustu eða vörur viðkomandi fyrirtækis.',
+      examples: ['Sinfóníuhljómsveit Íslands', 'Meniga']
+    }
+  )
+
+  +flokkur(
+    {
+      title: 'Fyrirtækjavefur ársins',
+      subtitle: 'Stór fyrirtæki'
+    },
+    {
+      description: 'Undir þennan flokk falla vefir fyrirtækja með 80+ starfsmenn á launaskrá. Hér er átt við alla almenna vefi sem kynna þjónustu eða vörur viðkomandi fyrirtækis.',
+      examples: ['Sjóvá ', 'Alvogen']
+    }
+  )
+
+  +flokkur(
+    {
+      title: 'Markaðsvefur ársins',
+    },
+    {
+      description: 'Undir þennan flokk falla vefir er tengjast markaðsherferðum, atburðum og/eða skilgreinast sem míkróvefir (e. microsites). Litið verður til hönnunar, efnis, nýnæmis og tæknilegrar útfærslu.',
+      examples: ['Zero Financial', 'Innri fegurð Bláa Lónsins', 'Iceland Airwaves vefur Landsbankans']
+    }
+  )
+
+  +flokkur(
+    {
+      title: 'Vefverslun ársins',
+    },
+    {
+      description: 'Undir þennan flokk falla vefir sem bjóða vörur og/eða þjónustu til sölu þar sem hægt er að ganga frá kaupum á netinu. Leitað er eftir vandaðri og skilmerkilegri uppsetningu á efni þar sem að kaupferlið er notendavænt.',
+      examples: ['Tix Miðasala']
+    }
+  )
+
+  +flokkur(
+    {
+      title: 'Efnis- og fréttaveita ársins',
+    },
+    {
+      description: 'Undir þennan flokk falla t.d. fjölmiðlar, blogg og vefsamfélög. Hér er leitað eftir vef með afþreyingargildi, sem er skemmtilegur, fróðlegur eða bæði.',
+      examples: ['Kjarninn', 'Mæðgurnar', 'RÚV']
+    }
+  )
+
+  +flokkur(
+    {
+      title: 'Opinberi vefur ársins',
+    },
+    {
+      description: 'Undir þennan flokk falla vefir tengdir opinberum aðilum hér á landi. Þar má nefna ríki, sveitarfélög og alla tengda starfsemi. Verkefni þurfa að mestum hluta að vera kostuð af ríki eða sveitarfélagi.',
+      examples: ['Ísland.is', 'Lögreglan', 'MATÍS']
+    }
+  )
+
+  +flokkur(
+    {
+      title: 'Innri vefur ársins'
+    },
+    {
+      description: 'Undir þennan flokk falla innri vefir fyrirtækja og stofnana, þ.e. lokuð þjónustusvæði sem hugsuð eru fyrir starfsfólk viðkomandi fyrirtækis eða stofnunnar. Til þess að dómnefnd geti dæmt þessi verkefni, óskar stjórn SVEF eftir að dómnefnd fái aðgang að viðkomandi innri vef.',
+      examples: ['Ljósleiðarans', 'Flugan (innri vefur Isavia)', 'MyWork (innri vefur Icelandair)']
+    }
+  )
+
+  +flokkur(
+    {
+      title: 'Vefkerfi ársins',
+    },
+    {
+      description: 'Undir þennan flokk falla vefir sem hugsaðir eru fyrir viðskiptavini fyrirtækja þar sem innskráningar er krafist. Þessir vefir bjóða upp á gagnvirkar leiðir til að sækja þjónustu og vinna með upplýsingar. Til þess að dómnefnd geti dæmt þessi verkefni, óskar stjórn SVEF eftir að dómnefnd fái aðgang að viðkomandi vefkerfi.',
+      examples: ['FitSuccess fjarþjálfun', 'Netbanki Landsbankans', 'Þjónustuvefur Símans']
+    }
+  )
+
+  +flokkur(
+    {
+      title: 'App ársins',
+    },
+    {
+      description: 'Í flokkinn „app ársins“ má tilnefna öll verkefni sem eru sérstaklega smíðuð fyrir snjalltæki eins og t.d. snjallsíma eða spjaldtölvur. Smáforrit geta verið leikir, þjónustur, upplýsinga- og afþreyingarveitur o.fl. Gerð er krafa um að appið hafi verið gefið út í app store fyrir iOS, Android eða sambærileg stýrikerfi.',
+      examples: ['QuizUp', 'Kass', 'Strætó']
+    }
+  )
+
+  +flokkur(
+    {
+      title: 'Samfélagsvefur ársins',
+    },
+    {
+      description: 'Undir þennan flokk falla vefir sem hafa það að markmiði að bæta samfélagið á einn eða annan máta. Þar má m.a. telja vefsvæði góðgerðamála eða félagasamtaka.',
+      examples: ['Ísland.is', 'Lögreglan', 'MATÍS'],
+      cheap: true
+    }
+  )
+
+  +flokkur(
+    {
+      title: 'Gæluverkefni ársins',
+      subtitle: 'Nýr flokkur'
+    },
+    {
+      description: 'Þessi flokkur verðlaunar verkefni unnin fyrir lítið eða ekkert fjármagn. Flokkurinn er sérstaklega hugsaður fyrir þau sem eru að gera verkefnin í eigin tíma eða fyrir nemendur sem eru að vinna að verkefnum í eða með skóla.',
+      examples: ['hvaderibio.is ', 'gengi.is'],
+      new: true,
+      cheap: true
     }
   )
 
@@ -47,111 +166,31 @@ block content
 
   +flokkur(
     {
-      title: 'Val fólksins',
+      title: 'Vefur ársins',
     },
     {
-      description: 'Félagsmenn SVEF velja þann vef sem þeim þótti athyglisverðastur á árinu, valið er að mörgu leiti opið en leitast er við að finna vef sem þótti vera með áhugaverða nálgun á framsetningu efnis, notkun á tækni, uppbyggingu innihalds o.s.frv.<br><br>Í ár er bryddað upp á þeirri nýbreytni að leita til félaga og áhugafólks í vefbransanum með tilnefningar til viðurkenninga fyrir vel unnin störf á árinu. Þetta árið verða eftirfarandi viðurkenningar veittar:<br><br><ul class="red"><li>Vefhetja ársins</li><li>Opin hugbúnaður/verkefni ársins</li><li>Besti einstaklingsvefur</li></ul><a class="button color-red outline" href="https://goo.gl/forms/IqvZVCfWRGoP7ruD2" target="_blank">Tilnefna til viðurkenninga</a>',
+      description: 'Dómnefnd velur þann vef sem þykir fremstur meðal jafningja, en vefur ársins er að vanda valinn úr tilnefndum vefjum í öllum flokkum.',
     }
   )
 
-  +flokkur(
-    {
-      title: 'Fyrirtækjavefur ársins',
-      subtitle: 'lítil og meðalstór fyrirtæki',
-    },
-    {
-      description: 'Undir þennan flokk falla vefir fyrirtækja með færri en 50 starfsmenn. Hér er átt við alla almenna upplýsingavefi sem kynna þjónustu og/eða vörur viðkomandi fyrirtækis.',
-      examples: ['Tix', 'Meniga', 'Nikita Clothing']
-    }
-  )
-  +flokkur(
-    {
-      title: 'Fyrirtækjavefur ársins',
-      subtitle: 'stærri fyrirtæki, 50+',
-    },
-    {
-      description: 'Undir þennan flokk falla vefir fyrirtækja með 50 starfsmenn eða fleiri. Hér er átt við alla almenna upplýsingavefi sem kynna þjónustu og/eða vörur viðkomandi fyrirtækis.',
-      examples: ['Icelandair', 'Síminn', 'Orka Náttúrunnar']
-    }
-  )
-  +flokkur(
-    {
-      title: 'Efnis- og fréttaveita ársins',
-    },
-    {
-      description: 'Undir þennan flokk falla t.d. fjölmiðlar, blogg og vefsamfélög. Hér er leitað eftir vef með afþreyingargildi, sem er skemmtilegur og/eða fróðlegur.',
-      examples: ['Stundin', 'Kjarninn', 'Mæðgurnar', 'RÚV']
-    }
-  )
-  +flokkur(
-    {
-      title: 'Opinberi vefur ársins',
-    },
-    {
-      description: 'Undir þennan flokk falla vefir tengdir opinberum aðilum hér á landi. Þar má nefna ríki, sveitarfélög og alla tengda starfsemi.',
-      examples: ['Ísland.is', 'Vínbúðin', 'Lögreglan', 'MATÍS']
-    }
-  )
-  +flokkur(
-    {
-      title: 'Markaðsvefur ársins',
-    },
-    {
-      description: 'Undir þennan flokk falla t.d. vefir sem tengjast markaðsherferðum. Litið verður til hugmyndar, nýnæmis, hönnunar, útfærslu, sérstöðu og árangurs.',
-      examples: ['Innri fegurð Bláa Lónsins', 'Iceland Airwaves vefur Landsbankans', 'Höldum fókus']
-    }
-  )
-  +flokkur(
-    {
-      title: 'App ársins',
-    },
-    {
-      description: 'Undir þennan flokk falla smáforrit (native app) sem eru sérstaklega smíðuð fyrir snjalltæki (t.d. snjallsíma eða spjaldtölvur). Þar má nefna leiki, þjónustur, upplýsinga- og afþreyingarveitur.',
-      examples: ['Aur', 'Airwaves', 'Quizup', 'Já']
-    }
-  )
-  +flokkur(
-    {
-      title: 'Vefapp ársins'
-    },
-    {
-      description: 'Undir þennan flokk falla vefir sem eru sérstaklega smíðaður til að vera notaðir á svipaðan/sambærilegan hátt og hefðbundin öpp, en í vafra.',
-      examples: ['Gengi.is', 'Quizup.com', 'Mappan']
-    }
-  )
-  +flokkur(
-    {
-      title: 'Samfélagsvefur ársins',
-      subtitle: 'Hét áður non-profit'
-    },
-    {
-      description: 'Undir þennan flokk falla vefir sem hafa það að markmiði að bæta samfélagið á einn eða annan máta. Þar má m.a. telja vefsvæði góðgerðamála eða félagasamtaka.',
-      examples: ['Visindavefurinn', 'Hlaupastyrkur', 'Bréf til bjargar lífi']
-    }
-  )
-  +flokkur(
-    {
-      title: 'Vefverslun ársins',
-    },
-    {
-      description: 'Undir þennan flokk falla vefir sem bjóða vörur og/eða þjónustu til sölu þar sem hægt er að ganga frá kaupum á netinu. Leitað er eftir vandaðri og skilmerkilegri uppsetningu á efni þar sem að kaupflæðið er einfalt, öruggt og hraðvirkt.',
-    }
-  )
-  +flokkur(
-    {
-      title: 'Innri vefur ársins',
-    },
-    {
-      description: 'Undir þennan flokk falla þjónustusvæði sem hugsuð eru fyrir starfsmenn fyrirtækja, t.d. innri vefir.',
-      examples: ['Flugan (innri vefur Isavia)', 'MyWork (innri vefur Icelandair)', ' Þjónustuvefur Mílu']
-    }
-  )
-  +flokkur(
-    {
-      title: 'Vefkerfi ársins',
-    },
-    {
-      description: 'Undir þennan flokk falla þjónustusvæði sem hugsuð eru fyrir viðskiptavini fyrirtækja, þar sem innskráningar er krafist. Þjónustusvæði sem þessi bjóða gagnvirkar leiðir til að sækja þjónustu og vinna með upplýsingar.<br><br>Til þess að dómnefnd geti dæmt þess verkefni óskum við eftir að dómnefnd fái aðgang að viðkomandi vefkerfi eða að með innsendingu fylgi myndband sem sé lýsandi fyrir virkni kerfisins.',
-      examples: ['Heilsuvera', 'Netbanki Landsbankans', 'Þjónustuvefur Símans']
-    }
-  )
+  .item(class=`color-red` id='innsendingar')
+    grid
+      column.large-up-offset-1.large-10
+        h2.item__title(num=num) Gjaldgengir vefir
+        .item__content
+
+          p Ekki er gerð krafa að verkefni sem send eru inn til íslensku vefverðlaunanna hafi verið unnin eða gefin út á árinu 2017. Margir vefir eru í eðli sínu í stöðugri þróun og eru því allir vefir sem komnir voru í loftið fyrir lok árs 2017 velkomnir.
+
+          p Stuðst er við víða skilgreiningu á því hvaða vefir geti tekið þátt í íslensku vefverðlaununum. Að vefurinn sé unninn fyrir Íslandsmarkað eða fyrir íslenskt fyrirtæki eða sé unnin að megninu til (meira en 50% af heild) á Íslandi eða af íslensku fyrirtæki. Komi upp vafaatriði tekur dómnefnd málið til umfjöllunar og hefur möguleika á að vísa álitamálum til stjórnar SVEF.
+
+  .item(class=`color-red` id='innsendingar')
+    grid
+      column.large-up-offset-1.large-10
+        h2.item__title(num=num) Innsendingar
+        .item__content
+
+          p Tekið verður á móti innsendingum fyrir árið 2017 fram til 5. desember 2017.
+
+          p Leyfilegt að skila gögnum til 10. desember 2017.
+          br
+          p: a.button.color-red(href='https://docs.google.com/forms/d/e/1FAIpQLSdh8rabnywxVwPmG6snEm8fmF1ABS7QEskMfAPL55rJX5bawQ/formResponse' target="_blank") Senda inn vef
