@@ -35,10 +35,6 @@ mixin flokkur(title = {}, info = {})
   +item(title.title || '', title.subtitle || '', '', 'red')
     p!=info.description || ''
 
-    if info.cheap
-      p: small
-        | Ódýrara er að tilnefna verkefni í þessum flokk en öðrum flokkum.
-
     if info.examples && info.examples.length > 0
       p: small
         - var count = 1
@@ -54,6 +50,19 @@ mixin flokkur(title = {}, info = {})
             | &nbsp;er dæmi um verkefni sem hlotið hefur viðurkenningu í þessum flokki.
           else
             | &nbsp;eru dæmi um verkefni sem hlotið hafa viðurkenningu í þessum flokki.
+
+    if info.price && info.earlybird
+      p Early bird #{info.earlybird} kr. / Fullt verð #{info.price} kr.
+
+    if info.price && !info.earlybird
+      p Verð #{info.price} kr.
+
+    if info.studentPrice
+      p Verð fyrir nema #{info.studentPrice} kr.
+
+    if info.earlybird
+      p: small Early bird gildir til og með 17. nóvember 2017.
+
 
 mixin nomination(title, subtitle, nominees)
   column.large-up-offset-1.large-3
