@@ -3,7 +3,7 @@ import 'es6-promise'
 import 'whatwg-fetch'
 
 import analytics from './modules/analytics'
-analytics.init('UA-90006733-1')
+analytics.init('UA-77889324-3')
 
 import domready from './modules/domready'
 import initRouter from './init/router'
