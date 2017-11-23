@@ -51,16 +51,16 @@ mixin flokkur(title = {}, info = {})
           else
             | &nbsp;eru dæmi um verkefni sem hlotið hafa viðurkenningu í þessum flokki.
 
-    if info.price && info.earlybird
+    //-if info.price && info.earlybird
       p Early bird #{info.earlybird} kr. / Fullt verð #{info.price} kr.
 
-    if info.price && !info.earlybird
+    if info.price
       p Verð #{info.price} kr.
 
     if info.studentPrice
       p Verð fyrir nema #{info.studentPrice} kr.
 
-    if info.earlybird
+    //-if info.earlybird
       p: small Early bird gildir til og með 17. nóvember 2017.
 
 
