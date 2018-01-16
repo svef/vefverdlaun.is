@@ -130,6 +130,17 @@ h1 {
   &:after {
     transform: translate3d(10vw, 0, 0);
   }
+
+  &.smaller-headline {
+    font-size: 80px;
+
+    @include respond-to(medium) {
+      font-size: 160px;
+    }
+    @include respond-to(large) {
+      font-size: 240px;
+    }
+  }
 }
 
 h2, h3, h4, h5, h6 {
