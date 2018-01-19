@@ -1,0 +1,168 @@
+extends /templates/shared/_layout
+
+block content
+  +pagetitle('Tilnefningar', 'blue')
+
+  +item('Viðurkenningar', '', '', 'green')
+    p SVEF leitar til félaga og áhugafólks í vefbransanum með tilnefningar til <a href="vidurkenningar.html">viðurkenninga</a> fyrir vel unnin störf á seinasta ári.
+
+    p: a.button.color-green(href='https://docs.google.com/forms/d/e/1FAIpQLSelWhw3LkNh6Fsw5VZ-x3yELaqUximPh8zCBeznz6sp34jm_Q/viewform' target="_blank") Tilnefna vefhetju
+
+    p: a.button.color-green(href='https://docs.google.com/forms/d/e/1FAIpQLScJxtilW1Yy3yISUzaBc-bn0N66y285Y7fdqAfIdUv-hAstNA/viewform' target="_blank") Tilnefna opinn hugbúnað
+
+    p: a.button.color-green(href='https://docs.google.com/forms/d/e/1FAIpQLSdCOB3e-VhUcSFzDEEYVaJtiO0gau8Ct3NliPrdWS1627HWLA/viewform' target="_blank") Tilnefna einstaklingsvef
+
+  section: grid
+    column.large-up-offset-1.large-10
+      h3 Tilnefningar 2017
+
+  +item('Markaðsvefur ársins', '', '', 'blue')
+    grid.text-left
+      column.large-5
+        +nominee('Iceland A–Ö', 'https://www.inspiredbyiceland.com/a-o', [])
+      column.large-up-offset-1.large-5
+        +nominee('Landsbankinn + Iceland Airwaves', 'https://www.landsbankinn.is/icelandairwaves', [])
+      column.large-5
+        +nominee('Lygamælir Sorpu', 'http://lygamaelir.sorpa.is/', [])
+      column.large-up-offset-1.large-5
+        +nominee('Tónlistinn', 'http://www.tonlistinn.tv/', [])
+      column.large-10
+        +nominee('Tyllidagar í Hörpu', 'http://desember.harpa.is/', [])
+
+  +item('Innri vefur ársins', '', '', 'blue')
+    grid.text-left
+      column.large-5
+        +nominee('Innri vefur Hafrannsóknarstofnunar', '', [])
+      column.large-up-offset-1.large-5
+        +nominee('Riddarinn', '', [])
+
+  +item('Vefkerfi ársins', '', '', 'blue')
+    grid.text-left
+      column.large-5
+        +nominee('Adversary', 'https://dev.adversary.io', [])
+      column.large-up-offset-1.large-5
+        +nominee('Farsímavefur Landsbankans', 'https://l.is/', [])
+      column.large-5
+        +nominee('Meniga', 'https://beta.meniga.is', [])
+      column.large-up-offset-1.large-5
+        +nominee('Payday', 'https://www.payday.is', [])
+      column.large-10
+        +nominee('Tix', 'http://info.tix.is/', [])
+
+  +item('App ársins', '', '', 'blue')
+    grid.text-left
+      column.large-5
+        +nominee('Arion appið', 'https://www.arionbanki.is/einstaklingar/rafraen-vidskipti/appid/', [])
+      column.large-up-offset-1.large-5
+        +nominee('Iceland Travel Companion', 'https://www.icelandtravel.is/', [])
+      column.large-5
+        +nominee('Kass', 'https://www.kass.is/', [])
+      column.large-up-offset-1.large-5
+        +nominee('Meniga', 'https://itunes.apple.com/us/app/meniga/id391085875', [])
+      column.large-10
+        +nominee('Síminn Pay', 'https://www.siminn.is/forsida/snjallthjonustur/pay', [])
+
+  +item('Efnis- og fréttaveita ársins', '', '', 'blue')
+    grid.text-left
+      column.large-5
+        +nominee('Himneskt', 'http://www.himneskt.is/', [])
+      column.large-up-offset-1.large-5
+        +nominee('Icelandic Lamb', 'http://icelandiclamb.is/', [])
+      column.large-5
+        +nominee('Ueno.design', 'https://ueno.design/', [])
+      column.large-up-offset-1.large-5
+        +nominee('Umræðan – efnis- og fréttaveita Landsbankans', 'https://umraedan.landsbankinn.is/', [])
+      column.large-10
+        +nominee('Vísir.is', 'http://www.visir.is/', [])
+
+  +item('Opinber vefur ársins', '', '', 'blue')
+    grid.text-left
+      column.large-5
+        +nominee('Ey tímarit', 'http://eytimarit.is/', [])
+      column.large-up-offset-1.large-5
+        +nominee('Háskóli Íslands', 'https://www.hi.is/', [])
+      column.large-5
+        +nominee('Vefur Hafrannsóknarstofnunar', 'https://www.hafogvatn.is/', [])
+      column.large-up-offset-1.large-5
+        +nominee('Þjóðleikhúsið', 'http://www.leikhusid.is/', [])
+      column.large-10
+        +nominee('Þjóðskrá Íslands', 'https://www.skra.is', [])
+
+  +item('Samfélagsvefur ársins', '', '', 'blue')
+    grid.text-left
+      column.large-5
+        +nominee('Bueno by Ueno', 'https://bueno.co/', [])
+      column.large-up-offset-1.large-5
+        +nominee('Finndu leið', 'http://finnduleid.is/', [])
+      column.large-5
+        +nominee('Flokkunarleiðbeiningar Sorpu', 'https://flokkid.sorpa.is/', [])
+      column.large-up-offset-1.large-5
+        +nominee('JSConf Iceland', 'https://2018.jsconf.is/', [])
+      column.large-10
+        +nominee('Kjóstu rétt', 'https://kjosturett.is', [])
+
+  +item('Vefverslun ársins', '', '', 'blue')
+    grid.text-left
+      column.large-5
+        +nominee('IKEA', 'https://www.IKEA.is', [])
+      column.large-up-offset-1.large-5
+        +nominee('Húsasmiðjan og Blómaval', 'https://www.husa.is/', [])
+      column.large-5
+        +nominee('Nespresso', 'https://nespresso.is/', [])
+      column.large-up-offset-1.large-5
+        +nominee('Nordic Visitor', 'https://www.nordicvisitor.com/', [])
+      column.large-10
+        +nominee('Nova', 'https://www.nova.is/vefverslun', [])
+
+  +item('Gæluverkefni ársins', '', '', 'blue')
+    grid.text-left
+      column.large-5
+        +nominee('Aurbjörg.is', 'https://Aurbjorg.is', [])
+      column.large-up-offset-1.large-5
+        +nominee('Eldsneyti.com', 'http://eldsneyti.com/', [])
+      column.large-5
+        +nominee('JSConf Iceland', 'https://2018.jsconf.is/', [])
+      column.large-up-offset-1.large-5
+        +nominee('Kjóstu rétt', 'https://kjosturett.is', [])
+      column.large-10
+        +nominee('Thorkelsdottir.com', 'http://www.thorkelsdottir.com', [])
+
+  +item('Fyrirtækjavefur ársins', 'lítil fyrirtæki', '', 'blue')
+    grid.text-left
+      column.large-5
+        +nominee('50skills', 'https://www.50skills.com/', [])
+      column.large-up-offset-1.large-5
+        +nominee('Aranja', 'https://aranja.com/', [])
+      column.large-5
+        +nominee('Diving Island', 'https://divingisland.com/', [])
+      column.large-up-offset-1.large-5
+        +nominee('Section 32', 'https://section32.herokuapp.com/', [])
+      column.large-10
+        +nominee('Reykjavík Fashion Festival', 'http://www.rff.is/', [])
+
+  +item('Fyrirtækjavefur ársins', 'meðalstór fyrirtæki', '', 'blue')
+    grid.text-left
+      column.large-5
+        +nominee('Brandenburg', 'https://brandenburg.is/', [])
+      column.large-up-offset-1.large-5
+        +nominee('Hugsmiðjan', 'https://www.hugsmidjan.is/', [])
+      column.large-5
+        +nominee('Kolibri', 'https://www.kolibri.is', [])
+      column.large-up-offset-1.large-5
+        +nominee('Stanford d.school', 'https://dschool.stanford.edu', [])
+      column.large-10
+        +nominee('Ueno', 'https://ueno.co/', [])
+
+  +item('Fyrirtækjavefur ársins', 'stór fyrirtæki', '', 'blue')
+    grid.text-left
+      column.large-5
+        +nominee('Efla verkfræðistofa', 'http://www.efla.is/', [])
+      column.large-up-offset-1.large-5
+        +nominee('Nova', 'https://www.nova.is/', [])
+      column.large-5
+        +nominee('Síminn', 'https://www.siminn.is/', [])
+      column.large-up-offset-1.large-5
+        +nominee('Tækniskólinn, skóli atvinnulífsins', 'http://www.tskoli.is/', [])
+      column.large-10
+        +nominee('Vodafone', 'https://vodafone.is', [])
+
