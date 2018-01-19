@@ -86,7 +86,11 @@ header {
     text-align: center;
 
     &.right {
-      display: none;
+      margin-bottom: $spacing;
+
+      @include respond-to(large) {
+        margin-bottom: 0;
+      }
     }
 
     .hide-on-large {
