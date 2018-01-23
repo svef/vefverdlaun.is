@@ -4,6 +4,7 @@ import domnefndRoute from './domnefnd'
 import flokkarRoute from './flokkar'
 import tilnefningarRoute from './tilnefningar'
 import vidurkenningarRoute from './vidurkenningar'
+import verdlaunaafhendingRoute from './verdlaunaafhending'
 
 export default {
   [homeRoute.path]: homeRoute,
@@ -12,4 +13,5 @@ export default {
   [flokkarRoute.path]: flokkarRoute,
   [tilnefningarRoute.path]: tilnefningarRoute,
   [vidurkenningarRoute.path]: vidurkenningarRoute,
+  [verdlaunaafhendingRoute.path]: verdlaunaafhendingRoute,
 }
