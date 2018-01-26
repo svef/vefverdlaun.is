@@ -1,0 +1,32 @@
+.sponsors {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  max-width: 1000px;
+  margin: 0 auto;
+
+  &__title {
+    margin-bottom: $spacing * 2;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    max-width: 200px;
+    margin-left: $spacing * 2;
+    margin-right: $spacing * 2;
+    margin-bottom: $spacing * 4;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
