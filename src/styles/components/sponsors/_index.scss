@@ -7,7 +7,8 @@
   margin: 0 auto;
 
   &__title {
-    margin-bottom: $spacing * 2;
+    margin-bottom: $spacing * 3;
+    font-weight: normal;
   }
 
   &__list {
