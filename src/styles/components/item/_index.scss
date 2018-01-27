@@ -115,6 +115,13 @@ body {
       }
     }
 
+    &.judges--no-intro p {
+      &:first-child:before {
+        content: '„';
+        font-weight: 700;
+      }
+    }
+
     *:last-child {
       margin-bottom: 0;
     }
