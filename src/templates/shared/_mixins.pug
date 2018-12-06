@@ -51,17 +51,17 @@ mixin flokkur(title = {}, info = {})
           else
             | &nbsp;eru dæmi um verkefni sem hlotið hafa viðurkenningu í þessum flokki.
 
-    //-if info.price && info.earlybird
-      p Early bird #{info.earlybird} kr. / Fullt verð #{info.price} kr.
+    if info.price && info.earlybird
+      p Forsöluverð #{info.earlybird} kr. / Fullt verð #{info.price} kr.
 
-    if info.price
+    //-if info.price
       p Verð #{info.price} kr.
 
     if info.studentPrice
       p Verð fyrir nema #{info.studentPrice} kr.
 
-    //-if info.earlybird
-      p: small Early bird gildir til og með 17. nóvember 2017.
+    if info.earlybird
+      p: small Forsöluverð gildir til og með 21. desember 2018.
 
 
 mixin nomination(title, subtitle, nominees)
