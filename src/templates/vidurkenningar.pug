@@ -3,7 +3,10 @@ extends /templates/shared/_layout
 block content
   +pagetitle('Viðurkenningar', 'green smaller-headline')
 
-  h3 Viðurkenningar 2017
+  section: grid
+    column.large-up-offset-1.large-10
+      h3 Viðurkenningar 2017
+
   +item('Einstaklingsvefur', '', '', 'green')
     grid.text-left
       column.large-10
