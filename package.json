@@ -21,9 +21,12 @@
     "lint": "eslint src",
     "test": "nyc ava",
     "test-dev": "supervisor --quiet --watch test,src/scripts --no-restart-on exit --exec npm -- run test --silent",
-    "build": "gulp build"
+    "build": "gulp build",
+    "start": "node server"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.16.4"
+  },
   "devDependencies": {
     "ava": "^0.14.0",
     "babel-plugin-add-module-exports": "^0.2.1",
