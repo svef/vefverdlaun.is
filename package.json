@@ -22,6 +22,7 @@
     "test": "nyc ava",
     "test-dev": "supervisor --quiet --watch test,src/scripts --no-restart-on exit --exec npm -- run test --silent",
     "build": "gulp build",
+    "postinstall": "yarn run build",
     "start": "node server"
   },
   "dependencies": {
