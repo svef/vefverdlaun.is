@@ -4,6 +4,9 @@
   "description": "New website for SVEF",
   "homepage": "https://github.com/svef/vefverdlaun.is#readme",
   "license": "ISC",
+  "engines": {
+    "node": "8"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/svef/vefverdlaun.is.git"
